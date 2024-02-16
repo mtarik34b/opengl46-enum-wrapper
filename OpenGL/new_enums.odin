@@ -89,7 +89,7 @@ Get_Synciv_Parameter :: enum u32 {
 */
 
 /* void CreateQueries(enum target, sizei n, uint *ids); */
-Create_Queries_Target :: enum u32 {
+Query_And_Timestamp_Target :: enum u32 {
 	ANY_SAMPLES_PASSED                    = ANY_SAMPLES_PASSED,
 	ANY_SAMPLES_PASSED_CONSERVATIVE       = ANY_SAMPLES_PASSED_CONSERVATIVE,
 	PRIMITIVES_GENERATED                  = PRIMITIVES_GENERATED,
@@ -113,8 +113,7 @@ Create_Queries_Target :: enum u32 {
 }
 
 /* void BeginQuery(enum target, uint id); */
-/* void BeginQueryIndexed(enum target, uint index, uint id); */
-Begin_Query_Target :: enum u32 {
+Query_Target :: enum u32 {
 	ANY_SAMPLES_PASSED                    = ANY_SAMPLES_PASSED,
 	ANY_SAMPLES_PASSED_CONSERVATIVE       = ANY_SAMPLES_PASSED_CONSERVATIVE,
 	PRIMITIVES_GENERATED                  = PRIMITIVES_GENERATED,
@@ -136,32 +135,55 @@ Begin_Query_Target :: enum u32 {
 	CLIPPING_OUTPUT_PRIMITIVES            = CLIPPING_OUTPUT_PRIMITIVES,
 }
 
-/* void EndQuery(enum target); */
-/* void EndQueryIndexed(enum target, uint index); */
-/* void GetQueryiv(enum target, enum pname, int *params); */
-End_Query_Target         :: Create_Queries_Target
-End_Query_Indexed_Target :: Create_Queries_Target
-Get_Queryiv_Target       :: Create_Queries_Target
+/* void BeginQueryIndexed(enum target, uint index, uint id); */
+// target: Query_Target
 
-Get_Queryiv_Parameter :: enum u32 {
+/* void EndQuery(enum target); */
+// target: Query_Target
+
+/* void EndQueryIndexed(enum target, uint index); */
+// target: Query_Target
+
+/* void GetQueryiv(enum target, enum pname, int *params); */
+// target: Query_And_Timestamp_Target
+
+Query_Parameter :: enum u32 {
 	CURRENT_QUERY      = CURRENT_QUERY,
 	QUERY_COUNTER_BITS = QUERY_COUNTER_BITS,
 }
 
 /* void GetQueryIndexediv(enum target, uint index, enum pname, int *params); */
-Get_Query_Indexediv_Target    :: Create_Queries_Target
-Get_Query_Indexediv_Parameter :: Get_Queryiv_Parameter
+// target: Query_And_Timestamp_Target
+// pname: Query_Parameter
 
 /* void GetQueryObjectiv(uint id, enum pname, int *params); */
-/* void GetQueryObjectuiv(uint id, enum pname, uint *params); */
-/* void GetQueryObjecti64v(uint id, enum pname, int64 *params); */
-/* void GetQueryObjectui64v(uint id, enum pname, uint64 *params); */
-Get_Query_Object_Parameter :: enum u32 {
+Query_Object_Parameter :: enum u32 {
 	QUERY_TARGET           = QUERY_TARGET,
 	QUERY_RESULT           = QUERY_RESULT,
 	QUERY_RESULT_NO_WAIT   = QUERY_RESULT_NO_WAIT,
 	QUERY_RESULT_AVAILABLE = QUERY_RESULT_AVAILABLE,
 }
+
+/* void GetQueryObjectuiv(uint id, enum pname, uint *params); */
+// pname: Query_Object_Parameter
+
+/* void GetQueryObjecti64v(uint id, enum pname, int64 *params); */
+// pname: Query_Object_Parameter
+
+/* void GetQueryObjectui64v(uint id, enum pname, uint64 *params); */
+// pname: Query_Object_Parameter
+
+/* void GetQueryBufferObjectiv( uint id, uint buffer, enum pname, intptr offset ); */
+// pname: Query_Object_Parameter
+
+/* void GetQueryBufferObjectuiv( uint id, uint buffer, enum pname, intptr offset ); */
+// pname: Query_Object_Parameter
+
+/* void GetQueryBufferObjecti64v( uint id, uint buffer, enum pname, intptr offset ); */
+// pname: Query_Object_Parameter
+
+/* void GetQueryBufferObjectui64v( uint id, uint buffer, enum pname, intptr offset ); */
+// pname: Query_Object_Parameter
 
 
 /*
