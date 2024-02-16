@@ -1,6 +1,150 @@
 package vendor_gl
 
 /*
+	Command Execution [2.3]
+*/
+
+/* OpenGL Errors [2.3.1] */
+
+/* enum GetError(void); */
+Error :: enum u32 {
+	NO_ERROR                      = NO_ERROR,
+	CONTEXT_LOST                  = CONTEXT_LOST,
+	INVALID_ENUM                  = INVALID_ENUM,
+	INVALID_VALUE                 = INVALID_VALUE,
+	INVALID_OPERATION             = INVALID_OPERATION,
+	INVALID_FRAMEBUFFER_OPERATION = INVALID_FRAMEBUFFER_OPERATION,
+	OUT_OF_MEMORY                 = OUT_OF_MEMORY,
+	STACK_OVERFLOW                = STACK_OVERFLOW,
+	STACK_UNDERFLOW               = STACK_UNDERFLOW,
+}
+
+
+/* Graphics Reset Recovery [2.3.2] */
+
+/* enum GetGraphicsResetStatus(void); */
+Get_Graphics_Reset_Status :: enum u32 {
+	NO_ERROR               = NO_ERROR,
+	GUILTY_CONTEXT_RESET   = GUILTY_CONTEXT_RESET,
+	INNOCENT_CONTEXT_RESET = INNOCENT_CONTEXT_RESET,
+	UNKNOWN_CONTEXT_RESET  = UNKNOWN_CONTEXT_RESET,
+}
+
+
+/*
+	Timer Queries [4.3]
+*/
+
+Query_Counter_Target :: enum u32 {
+	TIMESTAMP = TIMESTAMP,
+}
+
+
+/*
+	Synchronization
+*/
+
+/* Sync Objects and Fences [4.1] */
+
+Fence_Sync_Condition :: enum u32 {
+	SYNC_GPU_COMMANDS_COMPLETE = SYNC_GPU_COMMANDS_COMPLETE,
+}
+
+
+/* Waiting for Sync Objects [4.1.1] */
+/**/
+
+/* Sync Object Queries [4.1.3] */
+
+Get_Synciv_Parameter :: enum u32 {
+	OBJECT_TYPE    = OBJECT_TYPE,
+	SYNC_STATUS    = SYNC_STATUS,
+	SYNC_CONDITION = SYNC_CONDITION,
+	SYNC_FLAGS     = SYNC_FLAGS,
+}
+
+
+/*
+	Asynchronous Queries [4.2, 4.2.1]
+*/
+
+/* void CreateQueries(enum target, sizei n, uint *ids); */
+Create_Queries_Target :: enum u32 {
+	ANY_SAMPLES_PASSED                    = ANY_SAMPLES_PASSED,
+	ANY_SAMPLES_PASSED_CONSERVATIVE       = ANY_SAMPLES_PASSED_CONSERVATIVE,
+	PRIMITIVES_GENERATED                  = PRIMITIVES_GENERATED,
+	SAMPLES_PASSED                        = SAMPLES_PASSED,
+	TIME_ELAPSED                          = TIME_ELAPSED,
+	PRIMITIVES_SUBMITTED                  = PRIMITIVES_SUBMITTED,
+	VERTICES_SUBMITTED                    = VERTICES_SUBMITTED,
+	TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN = TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN,
+	TRANSFORM_FEEDBACK_OVERFLOW           = TRANSFORM_FEEDBACK_OVERFLOW,
+	TRANSFORM_FEEDBACK_STREAM_OVERFLOW    = TRANSFORM_FEEDBACK_STREAM_OVERFLOW,
+	COMPUTE_SHADER_INVOCATIONS            = COMPUTE_SHADER_INVOCATIONS,
+	VERTEX_SHADER_INVOCATIONS             = VERTEX_SHADER_INVOCATIONS,
+	FRAGMENT_SHADER_INVOCATIONS           = FRAGMENT_SHADER_INVOCATIONS,
+	GEOMETRY_SHADER_INVOCATIONS           = GEOMETRY_SHADER_INVOCATIONS,
+	TESS_EVALUATION_SHADER_INVOCATIONS    = TESS_EVALUATION_SHADER_INVOCATIONS,
+	TESS_CONTROL_SHADER_PATCHES           = TESS_CONTROL_SHADER_PATCHES,
+	GEOMETRY_SHADER_PRIMITIVES_EMITTED    = GEOMETRY_SHADER_PRIMITIVES_EMITTED,
+	CLIPPING_INPUT_PRIMITIVES             = CLIPPING_INPUT_PRIMITIVES,
+	CLIPPING_OUTPUT_PRIMITIVES            = CLIPPING_OUTPUT_PRIMITIVES,
+	TIMESTAMP                             = TIMESTAMP,
+}
+
+/* void BeginQuery(enum target, uint id); */
+/* void BeginQueryIndexed(enum target, uint index, uint id); */
+Begin_Query_Target :: enum u32 {
+	ANY_SAMPLES_PASSED                    = ANY_SAMPLES_PASSED,
+	ANY_SAMPLES_PASSED_CONSERVATIVE       = ANY_SAMPLES_PASSED_CONSERVATIVE,
+	PRIMITIVES_GENERATED                  = PRIMITIVES_GENERATED,
+	SAMPLES_PASSED                        = SAMPLES_PASSED,
+	TIME_ELAPSED                          = TIME_ELAPSED,
+	PRIMITIVES_SUBMITTED                  = PRIMITIVES_SUBMITTED,
+	VERTICES_SUBMITTED                    = VERTICES_SUBMITTED,
+	TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN = TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN,
+	TRANSFORM_FEEDBACK_OVERFLOW           = TRANSFORM_FEEDBACK_OVERFLOW,
+	TRANSFORM_FEEDBACK_STREAM_OVERFLOW    = TRANSFORM_FEEDBACK_STREAM_OVERFLOW,
+	COMPUTE_SHADER_INVOCATIONS            = COMPUTE_SHADER_INVOCATIONS,
+	VERTEX_SHADER_INVOCATIONS             = VERTEX_SHADER_INVOCATIONS,
+	FRAGMENT_SHADER_INVOCATIONS           = FRAGMENT_SHADER_INVOCATIONS,
+	GEOMETRY_SHADER_INVOCATIONS           = GEOMETRY_SHADER_INVOCATIONS,
+	TESS_EVALUATION_SHADER_INVOCATIONS    = TESS_EVALUATION_SHADER_INVOCATIONS,
+	TESS_CONTROL_SHADER_PATCHES           = TESS_CONTROL_SHADER_PATCHES,
+	GEOMETRY_SHADER_PRIMITIVES_EMITTED    = GEOMETRY_SHADER_PRIMITIVES_EMITTED,
+	CLIPPING_INPUT_PRIMITIVES             = CLIPPING_INPUT_PRIMITIVES,
+	CLIPPING_OUTPUT_PRIMITIVES            = CLIPPING_OUTPUT_PRIMITIVES,
+}
+
+/* void EndQuery(enum target); */
+/* void EndQueryIndexed(enum target, uint index); */
+/* void GetQueryiv(enum target, enum pname, int *params); */
+End_Query_Target         :: Create_Queries_Target
+End_Query_Indexed_Target :: Create_Queries_Target
+Get_Queryiv_Target       :: Create_Queries_Target
+
+Get_Queryiv_Parameter :: enum u32 {
+	CURRENT_QUERY      = CURRENT_QUERY,
+	QUERY_COUNTER_BITS = QUERY_COUNTER_BITS,
+}
+
+/* void GetQueryIndexediv(enum target, uint index, enum pname, int *params); */
+Get_Query_Indexediv_Target    :: Create_Queries_Target
+Get_Query_Indexediv_Parameter :: Get_Queryiv_Parameter
+
+/* void GetQueryObjectiv(uint id, enum pname, int *params); */
+/* void GetQueryObjectuiv(uint id, enum pname, uint *params); */
+/* void GetQueryObjecti64v(uint id, enum pname, int64 *params); */
+/* void GetQueryObjectui64v(uint id, enum pname, uint64 *params); */
+Get_Query_Object_Parameter :: enum u32 {
+	QUERY_TARGET           = QUERY_TARGET,
+	QUERY_RESULT           = QUERY_RESULT,
+	QUERY_RESULT_NO_WAIT   = QUERY_RESULT_NO_WAIT,
+	QUERY_RESULT_AVAILABLE = QUERY_RESULT_AVAILABLE,
+}
+
+
+/*
 	State and State Requests
 */
 
