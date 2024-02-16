@@ -3,7 +3,7 @@ package vendor_gl
 /* Simple Queries [22.1] */
 
 /* void GetBooleanv(enum pname, boolean *data); */
-Get_Boolean_V_Parameter :: enum u32 {
+Get_Booleanv_Parameter :: enum u32 {
 	SAMPLE_COVERAGE_INVERT    = SAMPLE_COVERAGE_INVERT,
 	DEPTH_WRITEMASK           = DEPTH_WRITEMASK,
 	UNPACK_SWAP_BYTES         = UNPACK_SWAP_BYTES,
@@ -18,7 +18,7 @@ Get_Boolean_V_Parameter :: enum u32 {
 }
 
 /* void GetIntegerv(enum pname, int *data); */
-Get_Integer_V_Parameter :: enum u32 {
+Get_Integerv_Parameter :: enum u32 {
 	PATCH_VERTICES                                  = PATCH_VERTICES,
 	ELEMENT_ARRAY_BUFFER_BINDING                    = ELEMENT_ARRAY_BUFFER_BINDING,
 	ARRAY_BUFFER_BINDING                            = ARRAY_BUFFER_BINDING,
@@ -274,14 +274,14 @@ Get_Integer_V_Parameter :: enum u32 {
 }
 
 /* void GetInteger64v(enum pname, int64 *data); */
-Get_Integer64_V_Parameter :: enum u32 {
+Get_Integer64v_Parameter :: enum u32 {
 	MAX_ELEMENT_INDEX             = MAX_ELEMENT_INDEX,
 	MAX_SHADER_STORAGE_BLOCK_SIZE = MAX_SHADER_STORAGE_BLOCK_SIZE,
 	MAX_SERVER_WAIT_TIMEOUT       = MAX_SERVER_WAIT_TIMEOUT,
 }
 
 /* void GetFloatv(enum pname, float *data); */
-Get_Float_V_Parameter :: enum u32 {
+Get_Floatv_Parameter :: enum u32 {
 	POINT_SIZE                        = POINT_SIZE,
 	POINT_FADE_THRESHOLD_SIZE         = POINT_FADE_THRESHOLD_SIZE,
 	LINE_WIDTH                        = LINE_WIDTH,
@@ -307,7 +307,7 @@ Get_Float_V_Parameter :: enum u32 {
 }
 
 /* void GetDoublev(enum pname, double *data); */
-Get_Double_V_Parameter :: enum u32 {
+Get_Doublev_Parameter :: enum u32 {
 	/* empty */
 }
 
@@ -355,7 +355,7 @@ Get_Floati_V_Target :: enum u32 {
 }
 
 /* void GetInteger64i_v(enum target, uint index, int64 *data); */
-Get_Integeri64_V_Target :: enum u32 {
+Get_Integer64i_V_Target :: enum u32 {
 	VERTEX_BINDING_OFFSET          = VERTEX_BINDING_OFFSET,
 	ATOMIC_COUNTER_BUFFER_START    = ATOMIC_COUNTER_BUFFER_START,
 	ATOMIC_COUNTER_BUFFER_SIZE     = ATOMIC_COUNTER_BUFFER_SIZE,
@@ -535,16 +535,17 @@ Get_Internalformati64v_Parameter :: enum u32 {
 
 /* void GetTransformFeedbackiv(uint xfb, enum pname, int *param); */
 Get_Transform_Feedbackiv_Parameter :: enum u32 {
-	TRANSFORM_FEEDBACK_PAUSED,
-	TRANSFORM_FEEDBACK_ACTIVE,
+	TRANSFORM_FEEDBACK_PAUSED = TRANSFORM_FEEDBACK_PAUSED,
+	TRANSFORM_FEEDBACK_ACTIVE = TRANSFORM_FEEDBACK_ACTIVE,
 }
 
 /* void GetTransformFeedbacki_v(uint xfb, enum pname, uint index, int *param); */
-Get_Transform_Feedbacki_v_Parameter :: enum u32 {
+Get_Transform_Feedbacki_V_Parameter :: enum u32 {
 	TRANSFORM_FEEDBACK_BUFFER_BINDING = TRANSFORM_FEEDBACK_BUFFER_BINDING,
 }
 
-Get_Transform_Feedbacki64_v_Parameter :: enum u32 {
+/* void GetTransformFeedbacki64_v(uint xfb, enum pname, uint index, int64 *param); */
+Get_Transform_Feedbacki64_V_Parameter :: enum u32 {
 	TRANSFORM_FEEDBACK_BUFFER_START = TRANSFORM_FEEDBACK_BUFFER_START,
 	TRANSFORM_FEEDBACK_BUFFER_SIZE  = TRANSFORM_FEEDBACK_BUFFER_SIZE,
 }
