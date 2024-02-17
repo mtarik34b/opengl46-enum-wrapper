@@ -273,5 +273,16 @@ Framebuffer_Texture_3D_Target :: enum u32 {
 /* enum CheckFramebufferStatus(enum target); */
 // target: Framebuffer_Target
 
+Check_Framebuffer_Status :: enum u32 {
+	FRAMEBUFFER_COMPLETE = FRAMEBUFFER_COMPLETE,
+	FRAMEBUFFER_UNDEFINED,
+	FRAMEBUFFER_INCOMPLETE_ATTACHMENT,
+	FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT,
+	FRAMEBUFFER_UNSUPPORTED,
+	FRAMEBUFFER_INCOMPLETE_MULTISAMPLE,
+	FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS,
+}
+
 /* enum CheckNamedFramebufferStatus(uint framebuffer, enum target); */
-// target: Framebuffer_Target
+// target:  Framebuffer_Target
+// returns: Check_Framebuffer_Status
