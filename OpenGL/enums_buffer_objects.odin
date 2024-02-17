@@ -137,7 +137,7 @@ Buffer_Format :: enum u32 {
 	DEPTH_STENCIL   = DEPTH_STENCIL,
 }
 
-//TODO(tarik): Better name could be Pixel_Data_Type
+//TODO(tarik): Duplicate of Pixel_Data_Type (other file)
 Buffer_Type :: enum u32 {
 	UNSIGNED_BYTE                  = UNSIGNED_BYTE,
 	BYTE                           = BYTE,
