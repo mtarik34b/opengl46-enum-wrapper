@@ -1,6 +1,7 @@
 package vendor_gl
 
 /* Create and Bind Buffer Objects [6.1] */
+
 /* void BindBuffer(enum target, uint buffer); */
 Buffer_Binding_Target :: enum u32 {
 	ARRAY_BUFFER              = ARRAY_BUFFER,
