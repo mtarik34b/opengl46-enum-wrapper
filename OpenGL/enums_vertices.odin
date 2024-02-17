@@ -3,7 +3,7 @@ package vendor_gl
 /* Separate Patches [10.1.15] */
 
 /* void PatchParameteri(enum pname, int value); */
-Patch_Parameter :: enum u32 {
+Patch_Parameteri :: enum u32 {
 	PATCH_VERTICES = PATCH_VERTICES,
 }
 
