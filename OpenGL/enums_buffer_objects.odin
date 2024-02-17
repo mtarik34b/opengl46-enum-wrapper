@@ -188,7 +188,7 @@ Buffer_Type :: enum u32 {
 /* void *MapBufferRange(enum target, intptr offset, sizeiptr length, bitfield access); */
 // target: Buffer_Binding_Target
 
-Map_Buffer_Access_Bits :: enum u32 {
+Access_Bits :: enum u32 {
 	MAP_READ_BIT              = MAP_READ_BIT,
 	MAP_WRITE_BIT             = MAP_WRITE_BIT,
 	MAP_PERSISTENT_BIT        = MAP_PERSISTENT_BIT,
@@ -200,19 +200,19 @@ Map_Buffer_Access_Bits :: enum u32 {
 }
 
 /* void *MapNamedBufferRange(uint buffer, intptr offset, sizeiptr length, bitfield access); */
-// access: Map_Buffer_Access_Bits
+// access: Access_Bits
 
 /* void *MapBuffer(enum target, enum access); */
 // target: Buffer_Binding_Target
 
-Map_Buffer_Access :: enum u32 {
+Access :: enum u32 {
 	READ_ONLY  = READ_ONLY,
 	WRITE_ONLY = WRITE_ONLY,
 	READ_WRITE = READ_WRITE,
 }
 
 /* void *MapNamedBuffer(uint buffer, enum access); */
-// access: Map_Buffer_Access
+// access: Access
 
 /* boolean UnmapBuffer(enum target); */
 // target: Buffer_Binding_Target
