@@ -367,6 +367,48 @@ Get_Integer64i_V_Target :: enum u32 {
 	UNIFORM_BUFFER_SIZE            = UNIFORM_BUFFER_SIZE,
 }
 
+// void Enable( enum target );
+Enable_Target :: enum u32 {
+	BLEND                         = BLEND,
+	CLIP_DISTANCE0                = CLIP_DISTANCE0,
+	CLIP_DISTANCE1                = CLIP_DISTANCE1,
+	CLIP_DISTANCE2                = CLIP_DISTANCE2,
+	CLIP_DISTANCE3                = CLIP_DISTANCE3,
+	CLIP_DISTANCE4                = CLIP_DISTANCE4,
+	CLIP_DISTANCE5                = CLIP_DISTANCE5,
+	CLIP_DISTANCE6                = CLIP_DISTANCE6,
+	CLIP_DISTANCE7                = CLIP_DISTANCE7,
+	COLOR_LOGIC_OP                = COLOR_LOGIC_OP,
+	CULL_FACE                     = CULL_FACE,
+	DEBUG_OUTPUT                  = DEBUG_OUTPUT,                  // Note: V4.3
+	DEBUG_OUTPUT_SYNCHRONOUS      = DEBUG_OUTPUT_SYNCHRONOUS,      // Note: V4.3
+	DEPTH_CLAMP                   = DEPTH_CLAMP,
+	DEPTH_TEST                    = DEPTH_TEST,
+	DITHER                        = DITHER,
+	FRAMEBUFFER_SRGB              = FRAMEBUFFER_SRGB,
+	LINE_SMOOTH                   = LINE_SMOOTH,
+	MULTISAMPLE                   = MULTISAMPLE,
+	POLYGON_OFFSET_FILL           = POLYGON_OFFSET_FILL,
+	POLYGON_OFFSET_LINE           = POLYGON_OFFSET_LINE,
+	POLYGON_OFFSET_POINT          = POLYGON_OFFSET_POINT,
+	POLYGON_SMOOTH                = POLYGON_SMOOTH,
+	PRIMITIVE_RESTART             = PRIMITIVE_RESTART,             // Note: V3.1
+	PRIMITIVE_RESTART_FIXED_INDEX = PRIMITIVE_RESTART_FIXED_INDEX, // Note: V4.3
+	RASTERIZER_DISCARD            = RASTERIZER_DISCARD,
+	SAMPLE_ALPHA_TO_COVERAGE      = SAMPLE_ALPHA_TO_COVERAGE,
+	SAMPLE_ALPHA_TO_ONE           = SAMPLE_ALPHA_TO_ONE,
+	SAMPLE_COVERAGE               = SAMPLE_COVERAGE,
+	SAMPLE_SHADING                = SAMPLE_SHADING,
+	SAMPLE_MASK                   = SAMPLE_MASK,
+	SCISSOR_TEST                  = SCISSOR_TEST,
+	STENCIL_TEST                  = STENCIL_TEST,
+	TEXTURE_CUBE_MAP_SEAMLESS     = TEXTURE_CUBE_MAP_SEAMLESS,     // Note: V3.2
+	PROGRAM_POINT_SIZE            = PROGRAM_POINT_SIZE,
+}
+
+// void Disable( enum target );
+Disable_Target :: Enable_Target
+
 /* boolean IsEnabled(enum cap); */
 Is_Enabled_Cap :: enum u32 {
 	PRIMITIVE_RESTART             = PRIMITIVE_RESTART,
