@@ -78,34 +78,34 @@ Sampler_Parameter :: enum u32 {
 }
 
 /* void SamplerParameterf(uint sampler, enum pname, T param); */
-// target: Sampler_Parameter
+// pname: Sampler_Parameter
 
 /* void SamplerParameteriv(uint sampler, enum pname, const T *param); */
-// target: Sampler_Parameter
+// pname: Sampler_Parameter
 
 /* void SamplerParameterfv(uint sampler, enum pname, const T *param); */
-// target: Sampler_Parameter
+// pname: Sampler_Parameter
 
 /* void SamplerParameterIiv(uint sampler, enum pname, const T *params); */
-// target: Sampler_Parameter
+// pname: Sampler_Parameter
 
 /* void SamplerParameterIuiv(uint sampler, enum pname, const T *params); */
-// target: Sampler_Parameter
+// pname: Sampler_Parameter
 
 
 /* Sampler Queries [8.3] */
 
 /* void GetSamplerParameteriv(uint sampler, enum pname, T *params); */
-// target: Sampler_Parameter
+// pname: Sampler_Parameter
 
 /* void GetSamplerParameterfv(uint sampler, enum pname, T *params); */
-// target: Sampler_Parameter
+// pname: Sampler_Parameter
 
 /* void GetSamplerParameterIiv(uint sampler, enum pname, T *params); */
-// target: Sampler_Parameter
+// pname: Sampler_Parameter
 
 /* void GetSamplerParameterIuiv(uint sampler, enum pname, T *params); */
-// target: Sampler_Parameter
+// pname: Sampler_Parameter
 
 
 /* Pixel Storage Modes [8.4.1] */
