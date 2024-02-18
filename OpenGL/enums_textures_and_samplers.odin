@@ -1130,6 +1130,7 @@ Tex_Storage_3D_Target :: enum u32 {
 
 /* void TexStorage3DMultisample(enum target, sizei samples, enum internalformat, sizei width, sizei height, sizei depth, boolean fixedsamplelocations); */
 // target: Tex_3D_Multisample_Target
+// internalformat: Tex_Storage_Internalformat
 
 /* void TextureStorage2DMultisample(uint texture, sizei samples, enum internalformat, sizei width, sizei height, boolean fixedsamplelocations); */
 // internalformat: Tex_Storage_Internalformat
