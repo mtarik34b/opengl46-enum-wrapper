@@ -145,7 +145,7 @@ Pixel_Store_Parameter :: enum u32 {
 
 /* Texture Image Spec. [8.5] */
 
-// TODO(tarik): Should int internalformat be u32 internalformat instead? Then cast it when passing to impl_*
+// NOTE(tarik): internalformat was turned from int to u32, whereas it's casted to i32 when passed to impl_*
 /* void TexImage3D(enum target, int level, int internalformat, sizei width, sizei height, sizei depth, int border, enum format, enum type, const void *data); */
 Tex_Image_3D_Target :: enum u32 {
 	TEXTURE_3D                   = TEXTURE_3D,
@@ -299,7 +299,7 @@ Pixel_Data_Type :: enum u32 {
 	FLOAT_32_UNSIGNED_INT_24_8_REV = FLOAT_32_UNSIGNED_INT_24_8_REV,
 }
 
-// TODO(tarik): Should int internalformat be u32 internalformat instead? Then cast it when passing to impl_*
+// NOTE(tarik): internalformat was turned from int to u32, whereas it's casted to i32 when passed to impl_*
 /* void TexImage2D(enum target, int level, int internalformat, sizei width, sizei height, int border, enum format, enum type, const void *data); */
 // internalformat: Texture_Internalformat
 // format:         Pixel_Data_Format
@@ -321,7 +321,7 @@ Tex_Image_2D_Target :: enum u32 {
 	PROXY_TEXTURE_CUBE_MAP      = PROXY_TEXTURE_CUBE_MAP,
 }
 
-// TODO(tarik): Should int internalformat be u32 internalformat instead? Then cast it when passing to impl_*
+// NOTE(tarik): internalformat was turned from int to u32, whereas it's casted to i32 when passed to impl_*
 /* void TexImage1D(enum target, int level, int internalformat, sizei width, int border, enum format, enum type, const void *data); */
 // internalformat: Texture_Internalformat
 // format:         Pixel_Data_Format
