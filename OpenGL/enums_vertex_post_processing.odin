@@ -51,6 +51,3 @@ Clip_Control_Depth :: enum u32 {
 	NEGATIVE_ONE_TO_ONE = NEGATIVE_ONE_TO_ONE,
 	ZERO_TO_ONE         = ZERO_TO_ONE,
 }
-
-/* Controlling Viewport [13.6.1] */
-/**/

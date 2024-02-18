@@ -26,9 +26,6 @@ Point_Parameter :: enum u32 {
 // pname: Point_Parameter
 
 
-/* Line Segments [14.5] */
-
-
 /* Polygons [14.6, 14.6.1] */
 
 /* void FrontFace(enum dir); */

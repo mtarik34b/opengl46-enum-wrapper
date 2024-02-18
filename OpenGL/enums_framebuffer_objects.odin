@@ -264,10 +264,6 @@ Framebuffer_Texture_3D_Target :: enum u32 {
 // attachment: Framebuffer_Renderbuffer_Attachment
 
 
-/* Feedback Loops [9.3.1] */
-/**/
-
-
 /* Framebuffer Completeness [9.4.2] */
 
 /* enum CheckFramebufferStatus(enum target); */

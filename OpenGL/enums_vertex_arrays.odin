@@ -1,9 +1,5 @@
 package vendor_gl
 
-/* Vertex Array Objects [10.3.1] */
-/**/
-
-
 /* Generic Vertex Attribute Arrays [10.3.2] */
 
 /* void VertexAttribFormat(uint attribindex, int size, enum type, boolean normalized, unit relativeoffset); */
@@ -55,12 +51,6 @@ Vertex_AttribL_Format_Type :: enum u32 {
 
 /* void VertexAttribLPointer(uint index, int size, enum type, sizei stride, const void*pointer); */
 // type: Vertex_AttribL_Format_Type
-
-
-/* Vertex Attribute Divisors [10.3.4] */
-
-
-/* Primitive Restart [10.3.6] */
 
 
 /* Drawing Commands [10.4] */

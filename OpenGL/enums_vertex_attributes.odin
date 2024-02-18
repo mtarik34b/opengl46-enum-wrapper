@@ -42,6 +42,7 @@ Attribute_Type :: enum u32 {
 	DOUBLE_MAT4x3     = DOUBLE_MAT4x3,
 }
 
+
 /* Transform Feedback Variables [11.1.2] */
 
 /* void TransformFeedbackVaryings(uint program, sizei count, const char * const *varyings, enum bufferMode); */
@@ -52,9 +53,6 @@ Transform_Feedback_Buffer_Mode :: enum u32 {
 
 /* void GetTransformFeedbackVarying(uint program, uint index, sizei bufSize, sizei *length, sizei *size, enum *type, char *name); */
 // type: Attribute_Type
-
-
-/* Shader Execution [11.1.3] */
 
 
 /* Tessellation Prim. Generation [11.2.2] */

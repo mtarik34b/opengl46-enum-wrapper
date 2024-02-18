@@ -218,8 +218,6 @@ Access :: enum u32 {
 /* boolean UnmapBuffer(enum target); */
 // target: Buffer_Binding_Target
 
-/* Invalidate Buffer Data [6.5] */
-
 
 /* Buffer Object Queries [6, 6.7] */
 

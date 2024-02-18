@@ -7,6 +7,7 @@ Patch_Parameteri :: enum u32 {
 	PATCH_VERTICES = PATCH_VERTICES,
 }
 
+
 /* Current Vertex Attribute Values [10.2] */
 
 /* void VertexAttribP1ui(uint index, enum type, boolean normalized, uint value); */

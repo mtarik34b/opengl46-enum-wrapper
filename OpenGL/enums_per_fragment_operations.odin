@@ -1,9 +1,5 @@
 package vendor_gl
 
-/* Scissor Test [17.3.2] */
-/**/
-
-
 /* Multisample Fragment Ops. [17.3.3] */
 
 /* void SampleMaski(uint maskNumber, bitfield mask); */
@@ -132,9 +128,6 @@ Blend_Function :: enum u32 {
 // dstRGB:   Blend_Function
 // srcAlpha: Blend_Function
 // dstAlpha: Blend_Function
-
-
-/* Dithering [17.3.10] */
 
 
 /* Logical Operation [17.3.11] */

@@ -899,10 +899,6 @@ Get_Tex_Image_Target :: enum u32 {
 /* void GetCompressedTextureSubImage(uint texture, int level, int xoffset, int yoffset, int zoffset, sizei width, sizei height, sizei depth, sizei bufSize, void *pixels); */
 
 
-/* Cube Map Texture Select [8.13.1] */
-/**/
-
-
 /* Manual Mipmap Generation [8.14.4] */
 
 /* void GenerateMipmap(enum target); */
@@ -1142,10 +1138,6 @@ Tex_Storage_3D_Target :: enum u32 {
 
 /* void TextureStorage3DMultisample(uint texture, sizei samples, enum internalformat, sizei width, sizei height, sizei depth, boolean fixedsamplelocations); */
 // internalformat: Tex_Storage_Internalformat
-
-
-/* Invalidate Texture Image Data [8.20] */
-/**/
 
 
 /* Clear Texture Image Data [8.21] */

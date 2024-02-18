@@ -145,7 +145,6 @@ Program_Resource_Location :: enum u32 {
 	COMPUTE_SUBROUTINE_UNIFORM         = COMPUTE_SUBROUTINE_UNIFORM,
 }
 
-
 /* int GetProgramResourceLocationIndex(uint program, enum programInterface, const char *name); */
 
 Program_Resource_Location_Index :: enum u32 {
@@ -181,8 +180,6 @@ Program_Binary_Format :: enum u32 {
 	// format values supported by an implementation. The binaryFormat
 	// returned by GetProgramBinary must be present in this list."
 }
-
-
 
 /* void ProgramBinary(uint program, enum binaryFormat, const void *binary, sizei length); */
 // TODO(tarik): Not sure if this is correct
@@ -356,10 +353,6 @@ Active_Atomic_Counter_Buffer_Parameter :: enum u32 {
 }
 
 
-/* Shader Buffer Variables [7.8] */
-/**/
-
-
 /* Subroutine Uniform Variables [7.9] */
 
 /* int GetSubroutineUniformLocation(uint program, enum shadertype, const char *name); */
@@ -456,7 +449,6 @@ Get_Shader_Parameter :: enum u32 {
 	//              See pages 167, 612.
 	COMPUTE_SHADER       = COMPUTE_SHADER,
 }
-
 
 /* void GetProgramiv(uint program, enum pname, int *params); */
 Get_Program_Parameter :: enum u32 {
