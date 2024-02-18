@@ -772,9 +772,11 @@ Get_Texture_Parameter :: enum u32 {
 
 /* void GetTexParameterIiv(enum target, enum pname, T * params); */
 // target: Texture_Parameter_Target
+// pname:  Get_Texture_Parameter
 
 /* void GetTexParameterIuiv(enum target, enum pname, T * params); */
 // target: Texture_Parameter_Target
+// pname:  Get_Texture_Parameter
 
 /* void GetTextureParameteriv(uint texture, enum pname, T *data); */
 // target: Texture_Parameter_Target
