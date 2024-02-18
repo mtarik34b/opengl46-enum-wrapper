@@ -3,6 +3,9 @@ package vendor_gl
 /* Multisampling [14.3.1] */
 
 /* void GetMultisamplefv(enum pname, uint index, float *val); */
+Multisample_Parameter :: enum u32 {
+	SAMPLE_POSITION = SAMPLE_POSITION,
+}
 
 
 /* Points [14.4] */
