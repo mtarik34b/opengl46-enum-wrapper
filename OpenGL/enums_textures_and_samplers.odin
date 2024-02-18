@@ -483,13 +483,13 @@ Compressed_Tex_Image_2D_Target :: enum u32 {
 
 /* Multisample Textures [8.8] */
 
-/* void TexImage3DMultisample(enum target, sizei samples, int internalformat, sizei width, sizei height, sizei depth, boolean fixedsamplelocations); */
+/* void TexImage3DMultisample(enum target, sizei samples, enum internalformat, sizei width, sizei height, sizei depth, boolean fixedsamplelocations); */
 Tex_3D_Multisample_Target :: enum u32 {
 	TEXTURE_2D_MULTISAMPLE_ARRAY       = TEXTURE_2D_MULTISAMPLE_ARRAY,
 	PROXY_TEXTURE_2D_MULTISAMPLE_ARRAY = PROXY_TEXTURE_2D_MULTISAMPLE_ARRAY,
 }
 
-Color_Depth_Stencil_Renderable_Format :: enum i32 {
+Color_Depth_Stencil_Renderable_Format :: enum u32 {
 	// TODO(tarik): Marked fields are part of the enum as per my limited
 	//              understanding of the Spec. (see page 234, 327,...),
 	//              however they're not included in the Ref. Card. This
@@ -586,7 +586,7 @@ Color_Depth_Stencil_Renderable_Format :: enum i32 {
 	STENCIL_INDEX16    = STENCIL_INDEX16,
 }
 
-/* void TexImage2DMultisample(enum target, sizei samples, int internalformat, sizei width, sizei height, boolean fixedsamplelocations); */
+/* void TexImage2DMultisample(enum target, sizei samples, enum internalformat, sizei width, sizei height, boolean fixedsamplelocations); */
 // internalformat: Color_Depth_Stencil_Renderable_Format
 
 Tex_2D_Multisample_Target :: enum u32 {
