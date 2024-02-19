@@ -19,7 +19,7 @@ Error :: enum u32 {
 /* Graphics Reset Recovery [2.3.2] */
 
 /* enum GetGraphicsResetStatus(void); */
-Get_Graphics_Reset_Status :: enum u32 {
+Graphics_Reset_Status :: enum u32 {
 	NO_ERROR               = NO_ERROR,
 	GUILTY_CONTEXT_RESET   = GUILTY_CONTEXT_RESET,
 	INNOCENT_CONTEXT_RESET = INNOCENT_CONTEXT_RESET,

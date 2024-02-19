@@ -15,6 +15,13 @@ Fence_Sync_Bits :: enum u32 {
 /* Waiting for Sync Objects [4.1.1] */
 
 /* enum ClientWaitSync(sync sync, bitfield flags, uint64 timeout_ns); */
+Client_Wait_Sync_Status :: enum u32 {
+	ALREADY_SIGNALED    = ALREADY_SIGNALED,
+	TIMEOUT_EXPIRED     = TIMEOUT_EXPIRED,
+	CONDITION_SATISFIED = CONDITION_SATISFIED,
+	WAIT_FAILED         = WAIT_FAILED,
+}
+
 Client_Wait_Sync_Bits :: enum u32 {
 	ZERO = ZERO,
 	SYNC_FLUSH_COMMANDS_BIT = SYNC_FLUSH_COMMANDS_BIT,
