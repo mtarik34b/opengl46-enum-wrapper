@@ -6,6 +6,7 @@ import "core:os"
 import "core:fmt"
 import "core:strings"
 import "base:runtime"
+import "base:intrinsics"
 _ :: fmt
 _ :: runtime
 
@@ -52,13 +53,14 @@ when GL_DEBUG {
 	@private
 	check_error :: proc(
 		id: u32, type: Shader_Type, status: u32,
-		iv_func: proc "c" (u32, u32, [^]i32, runtime.Source_Code_Location),
+		iv_func: proc "c" (u32, $Type, [^]i32, runtime.Source_Code_Location),
 		log_func: proc "c" (u32, i32, ^i32, [^]u8, runtime.Source_Code_Location), 
 		loc := #caller_location,
-	) -> (success: bool) {
+	) -> (success: bool)
+	where intrinsics.type_core_type(Type) == u32 {
 		result, info_log_length: i32
-		iv_func(id, status, &result, loc)
-		iv_func(id, INFO_LOG_LENGTH, &info_log_length, loc)
+		iv_func(id, Type(status), &result, loc)
+		iv_func(id, Type(INFO_LOG_LENGTH), &info_log_length, loc)
 
 		if result == 0 {
 			if log_func == GetShaderInfoLog {
@@ -87,12 +89,12 @@ when GL_DEBUG {
 	@private
 	check_error :: proc(
 		id: u32, type: Shader_Type, status: u32,
-		iv_func: proc "c" (u32, u32, [^]i32),
+		iv_func: proc "c" (u32, $Type, [^]i32),
 		log_func: proc "c" (u32, i32, ^i32, [^]u8),
-	) -> (success: bool) {
+	) -> (success: bool) where intrinsics.type_core_type(Type) == u32 {
 		result, info_log_length: i32
-		iv_func(id, status, &result)
-		iv_func(id, INFO_LOG_LENGTH, &info_log_length)
+		iv_func(id, Type(status), &result)
+		iv_func(id, Type(INFO_LOG_LENGTH), &info_log_length)
 
 		if result == 0 {
 			if log_func == GetShaderInfoLog {
@@ -122,7 +124,7 @@ when GL_DEBUG {
 // Compiling shaders are identical for any shader (vertex, geometry, fragment, tesselation, (maybe compute too))
 @private
 compile_shader_from_source :: proc(shader_data: string, shader_type: Shader_Type) -> (shader_id: u32, ok: bool) {
-	shader_id = CreateShader(cast(u32)shader_type)
+	shader_id = CreateShader(shader_type)
 	length := i32(len(shader_data))
 	shader_data_copy := cstring(raw_data(shader_data))
 	ShaderSource(shader_id, 1, &shader_data_copy, &length)
@@ -141,11 +143,11 @@ create_and_link_program :: proc(shader_ids: []u32, binary_retrievable := false) 
 		AttachShader(program_id, id)
 	}
 	if binary_retrievable {
-		ProgramParameteri(program_id, PROGRAM_BINARY_RETRIEVABLE_HINT, 1/*true*/)
+		ProgramParameteri(program_id, .PROGRAM_BINARY_RETRIEVABLE_HINT, 1/*true*/)
 	}
 	LinkProgram(program_id)
 
-	check_error(program_id, Shader_Type.SHADER_LINK, LINK_STATUS, GetProgramiv, GetProgramInfoLog) or_return
+	check_error(program_id, .SHADER_LINK, LINK_STATUS, GetProgramiv, GetProgramInfoLog) or_return
 	ok = true
 	return
 }
@@ -155,13 +157,13 @@ load_compute_file :: proc(filename: string, binary_retrievable := false) -> (pro
 	defer delete(cs_data)
 
 	// Create the shaders
-	compute_shader_id := compile_shader_from_source(string(cs_data), Shader_Type(COMPUTE_SHADER)) or_return
+	compute_shader_id := compile_shader_from_source(string(cs_data), .COMPUTE_SHADER) or_return
 	return create_and_link_program([]u32{compute_shader_id}, binary_retrievable)
 }
 
 load_compute_source :: proc(cs_data: string, binary_retrievable := false) -> (program_id: u32, ok: bool) {
 	// Create the shaders
-	compute_shader_id := compile_shader_from_source(cs_data, Shader_Type(COMPUTE_SHADER)) or_return
+	compute_shader_id := compile_shader_from_source(cs_data, .COMPUTE_SHADER) or_return
 	return create_and_link_program([]u32{compute_shader_id}, binary_retrievable)
 }
 
@@ -177,10 +179,10 @@ load_shaders_file :: proc(vs_filename, fs_filename: string, binary_retrievable :
 
 load_shaders_source :: proc(vs_source, fs_source: string, binary_retrievable := false) -> (program_id: u32, ok: bool) {
 	// actual function from here
-	vertex_shader_id := compile_shader_from_source(vs_source, Shader_Type.VERTEX_SHADER) or_return
+	vertex_shader_id := compile_shader_from_source(vs_source, .VERTEX_SHADER) or_return
 	defer DeleteShader(vertex_shader_id)
 
-	fragment_shader_id := compile_shader_from_source(fs_source, Shader_Type.FRAGMENT_SHADER) or_return
+	fragment_shader_id := compile_shader_from_source(fs_source, .FRAGMENT_SHADER) or_return
 	defer DeleteShader(fragment_shader_id)
 
 	return create_and_link_program([]u32{vertex_shader_id, fragment_shader_id}, binary_retrievable)
@@ -265,7 +267,7 @@ destroy_uniforms :: proc(u: Uniforms) {
 
 get_uniforms_from_program :: proc(program: u32) -> (uniforms: Uniforms) {
 	uniform_count: i32
-	GetProgramiv(program, ACTIVE_UNIFORMS, &uniform_count)
+	GetProgramiv(program, .ACTIVE_UNIFORMS, &uniform_count)
 
 	if uniform_count > 0 {
 		reserve(&uniforms, int(uniform_count))
@@ -276,7 +278,7 @@ get_uniforms_from_program :: proc(program: u32) -> (uniforms: Uniforms) {
 
 		length: i32
 		cname: [256]u8
-		GetActiveUniform(program, u32(i), 256, &length, &uniform_info.size, cast(^u32)&uniform_info.kind, &cname[0])
+		GetActiveUniform(program, u32(i), 256, &length, &uniform_info.size, &uniform_info.kind, &cname[0])
 
 		uniform_info.location = GetUniformLocation(program, cstring(&cname[0]))
 		uniform_info.name = strings.clone(string(cname[:length])) // @NOTE: These need to be freed
