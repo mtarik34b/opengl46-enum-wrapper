@@ -34,14 +34,30 @@ Color_Clamping :: enum u32 {
 /* Copying Pixels [18.3] */
 
 /* void BlitFramebuffer(int srcX0, int srcY0, int srcX1, int srcY1, int dstX0, int dstY0, int dstX1, int dstY1, bitfield mask, enum filter); */
-// mask: Clear_Bits
+Blit_Mask_Bits :: enum u32 {
+	COLOR_BUFFER_BIT   = COLOR_BUFFER_BIT,
+	DEPTH_BUFFER_BIT   = DEPTH_BUFFER_BIT,
+	STENCIL_BUFFER_BIT = STENCIL_BUFFER_BIT,
+}
+
+// NOTE(tarik): This shall suffice until Odin has real bitfields.
+Blit_Mask :: enum u32 {
+	COLOR_BUFFER_BIT         = COLOR_BUFFER_BIT,
+	DEPTH_BUFFER_BIT         = DEPTH_BUFFER_BIT,
+	STENCIL_BUFFER_BIT       = STENCIL_BUFFER_BIT,
+	COLOR_DEPTH_BITS         = COLOR_BUFFER_BIT | DEPTH_BUFFER_BIT,
+	COLOR_STENCIL_BITS       = COLOR_BUFFER_BIT | STENCIL_BUFFER_BIT,
+	DEPTH_STENCIL_BITS       = DEPTH_BUFFER_BIT | STENCIL_BUFFER_BIT,
+	COLOR_DEPTH_STENCIL_BITS = COLOR_BUFFER_BIT | DEPTH_BUFFER_BIT | STENCIL_BUFFER_BIT,
+}
+
 Blit_Framebuffer_Filter :: enum u32 {
 	LINEAR  = LINEAR,
 	NEAREST = NEAREST,
 }
 
 /* void BlitNamedFramebuffer(uint readFramebuffer, uint drawFramebuffer, int srcX0, int srcY0, int srcX1, int srcY1, int dstX0, int dstY0, int dstX1, int dstY1, bitfield mask, enum filter); */
-// mask: Clear_Bits
+// mask: Blit_Mask
 // filter: Blit_Framebuffer_Filter
 
 /* void CopyImageSubData(uint srcName, enum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, enum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, sizei srcWidth, sizei srcHeight, sizei srcDepth); */

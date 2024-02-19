@@ -113,6 +113,17 @@ Clear_Bits :: enum u32 {
 	STENCIL_BUFFER_BIT = STENCIL_BUFFER_BIT,
 }
 
+// NOTE(tarik): This shall suffice until Odin has real bitfields.
+Clear_Mask :: enum u32 {
+	COLOR_BUFFER_BIT         = COLOR_BUFFER_BIT,
+	DEPTH_BUFFER_BIT         = DEPTH_BUFFER_BIT,
+	STENCIL_BUFFER_BIT       = STENCIL_BUFFER_BIT,
+	COLOR_DEPTH_BITS         = COLOR_BUFFER_BIT | DEPTH_BUFFER_BIT,
+	COLOR_STENCIL_BITS       = COLOR_BUFFER_BIT | STENCIL_BUFFER_BIT,
+	DEPTH_STENCIL_BITS       = DEPTH_BUFFER_BIT | STENCIL_BUFFER_BIT,
+	COLOR_DEPTH_STENCIL_BITS = COLOR_BUFFER_BIT | DEPTH_BUFFER_BIT | STENCIL_BUFFER_BIT,
+}
+
 /* void ClearBufferiv(enum buffer, int drawbuffer, const T *value); */
 Clear_Bufferiv :: enum u32 {
 	COLOR   = COLOR,
