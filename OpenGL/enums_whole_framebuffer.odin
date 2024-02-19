@@ -204,7 +204,6 @@ Invalidate_Framebuffer_Attachment :: enum u32 {
 
 /* void InvalidateFramebuffer(enum target, sizei numAttachments, const enum *attachments); */
 // target: Framebuffer_Target
-
 // attachments: Invalidate_Framebuffer_Attachment
 
 /* void InvalidateNamedFramebufferData(uint framebuffer, sizei numAttachments, const enum *attachments); */

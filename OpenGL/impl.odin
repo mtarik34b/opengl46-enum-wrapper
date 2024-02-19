@@ -85,8 +85,8 @@ impl_ClearDepth:             proc "c" (depth: f64)
 impl_StencilMask:            proc "c" (mask: u32)
 impl_ColorMask:              proc "c" (red: bool, green: bool, blue: bool, alpha: bool)
 impl_DepthMask:              proc "c" (flag: bool)
-impl_Disable:                proc "c" (cap: u32)
-impl_Enable:                 proc "c" (cap: u32)
+impl_Disable:                proc "c" (target: u32)
+impl_Enable:                 proc "c" (target: u32)
 impl_Finish:                 proc "c" ()
 impl_Flush:                  proc "c" ()
 impl_BlendFunc:              proc "c" (sfactor: u32, dfactor: u32)
@@ -1627,8 +1627,8 @@ load_4_5 :: proc(set_proc_address: Set_Proc_Address_Type) {
 
 // VERSION_4_6
 impl_SpecializeShader:               proc "c" (shader: u32, pEntryPoint: cstring, numSpecializationConstants: u32, pConstantIndex: ^u32, pConstantValue: ^u32)
-impl_MultiDrawArraysIndirectCount:   proc "c" (mode: i32, indirect: [^]DrawArraysIndirectCommand, drawcount: i32, maxdrawcount, stride: i32)
-impl_MultiDrawElementsIndirectCount: proc "c" (mode: i32, type: i32, indirect: [^]DrawElementsIndirectCommand, drawcount: i32, maxdrawcount, stride: i32)
+impl_MultiDrawArraysIndirectCount:   proc "c" (mode: u32, indirect: [^]DrawArraysIndirectCommand, drawcount: i32, maxdrawcount, stride: i32)
+impl_MultiDrawElementsIndirectCount: proc "c" (mode: u32, type: u32, indirect: [^]DrawElementsIndirectCommand, drawcount: i32, maxdrawcount, stride: i32)
 impl_PolygonOffsetClamp:             proc "c" (factor, units, clamp: f32)
 
 load_4_6 :: proc(set_proc_address: Set_Proc_Address_Type) {
@@ -1637,4 +1637,3 @@ load_4_6 :: proc(set_proc_address: Set_Proc_Address_Type) {
 	set_proc_address(&impl_MultiDrawElementsIndirectCount, "glMultiDrawElementsIndirectCount")
 	set_proc_address(&impl_PolygonOffsetClamp,             "glPolygonOffsetClamp")
 }
-

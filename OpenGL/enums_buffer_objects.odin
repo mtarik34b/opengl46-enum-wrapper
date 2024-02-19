@@ -178,7 +178,6 @@ Buffer_Type :: enum u32 {
 // type:           Buffer_Type
 
 /* void ClearNamedBufferData(uint buffer, enum internalformat, enum format, enum type, const void *data); */
-// target:         Buffer_Binding_Target
 // internalformat: Buffer_Internalformat
 // format:         Buffer_Format
 // type:           Buffer_Type
@@ -245,7 +244,7 @@ Buffer_Parameter :: enum u32 {
 /* void GetNamedBufferParameteriv(uint buffer, enum pname, int*data); */
 // pname: Buffer_Parameter
 
-/* void GetNamedBufferParameteri[64]v(uint buffer, enum pname, int[64]*data); */
+/* void GetNamedBufferParameteri64v(uint buffer, enum pname, int64*data); */
 // pname: Buffer_Parameter
 
 /* void GetBufferPointerv(enum target, enum pname, const void **params); */

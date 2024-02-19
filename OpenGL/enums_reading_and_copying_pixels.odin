@@ -9,20 +9,6 @@ package vendor_gl
 // src: Draw_Buffer (in other file)
 
 /* void ReadPixels(int x, int y, sizei width, sizei height, enum format, enum type, void *data); */
-Read_Pixels_Parameter :: enum u32 {
-	PACK_SWAP_BYTES              = PACK_SWAP_BYTES,
-	PACK_LSB_FIRST               = PACK_LSB_FIRST,
-	PACK_ROW_LENGTH              = PACK_ROW_LENGTH,
-	PACK_SKIP_ROWS               = PACK_SKIP_ROWS,
-	PACK_SKIP_PIXELS             = PACK_SKIP_PIXELS,
-	PACK_ALIGNMENT               = PACK_ALIGNMENT,
-	PACK_IMAGE_HEIGHT            = PACK_IMAGE_HEIGHT,
-	PACK_SKIP_IMAGES             = PACK_SKIP_IMAGES,
-	PACK_COMPRESSED_BLOCK_WIDTH  = PACK_COMPRESSED_BLOCK_WIDTH,
-	PACK_COMPRESSED_BLOCK_HEIGHT = PACK_COMPRESSED_BLOCK_HEIGHT,
-	PACK_COMPRESSED_BLOCK_DEPTH  = PACK_COMPRESSED_BLOCK_DEPTH,
-	PACK_COMPRESSED_BLOCK_SIZE   = PACK_COMPRESSED_BLOCK_SIZE,
-}
 // format: Pixel_Data_Format
 // type:   Pixel_Data_Type
 

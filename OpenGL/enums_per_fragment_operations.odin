@@ -26,9 +26,6 @@ Stencil_Face :: enum u32 {
 }
 
 /* void StencilOp(enum sfail, enum dpfail, enum dppass); */
-// sfail:  Stencil_Operation
-// dpfail: Stencil_Operation
-// dppass: Stencil_Operation
 Stencil_Operation :: enum u32 {
 	KEEP      = KEEP,
 	ZERO      = ZERO,
@@ -51,19 +48,6 @@ Stencil_Operation :: enum u32 {
 
 /* void DepthFunc(enum func); */
 // func: Comparison_Func
-
-
-/* Occlusion Queries [17.3.7] */
-
-/* BeginQuery(enum target, uint id); */
-Occlusion_Query_Target :: enum u32 {
-	SAMPLES_PASSED                  = SAMPLES_PASSED,
-	ANY_SAMPLES_PASSED              = ANY_SAMPLES_PASSED,
-	ANY_SAMPLES_PASSED_CONSERVATIVE = ANY_SAMPLES_PASSED_CONSERVATIVE,
-}
-
-/* EndQuery(enum target); */
-// target: Occlusion_Query_Target
 
 
 /* Blending [17.3.8] */

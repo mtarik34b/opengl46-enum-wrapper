@@ -147,7 +147,7 @@ Renderbuffer_Target :: enum u32 {
 /* Renderbuffer Object Queries [9.2.6] */
 
 /* void GetRenderbufferParameteriv(enum target, enum pname, int *params); */
-// target:         Renderbuffer_Target
+// target: Renderbuffer_Target
 Renderbuffer_Parameter :: enum u32 {
 	RENDERBUFFER_WIDTH           = RENDERBUFFER_WIDTH,
 	RENDERBUFFER_HEIGHT          = RENDERBUFFER_HEIGHT,
@@ -269,7 +269,7 @@ Framebuffer_Texture_3D_Target :: enum u32 {
 /* enum CheckFramebufferStatus(enum target); */
 // target: Framebuffer_Target
 
-Check_Framebuffer_Status :: enum u32 {
+Framebuffer_Status :: enum u32 {
 	FRAMEBUFFER_COMPLETE = FRAMEBUFFER_COMPLETE,
 	FRAMEBUFFER_UNDEFINED,
 	FRAMEBUFFER_INCOMPLETE_ATTACHMENT,
@@ -281,4 +281,4 @@ Check_Framebuffer_Status :: enum u32 {
 
 /* enum CheckNamedFramebufferStatus(uint framebuffer, enum target); */
 // target:  Framebuffer_Target
-// returns: Check_Framebuffer_Status
+// returns: Framebuffer_Status

@@ -14,7 +14,7 @@ _Shader_Type :: enum u32 {
 }
 
 /* void ShaderBinary(sizei count, const uint *shaders, enum binaryformat, const void *binary, sizei length); */
-Binaryformat :: enum u32 {
+Shader_Binary_Format :: enum u32 {
 	SHADER_BINARY_FORMAT_SPIR_V = SHADER_BINARY_FORMAT_SPIR_V,
 }
 
@@ -22,6 +22,7 @@ Binaryformat :: enum u32 {
 /* Program Objects [7.3] */
 
 /* uint CreateShaderProgramv(enum type, sizei count, const char * const * strings); */
+// type: Shader_Type
 
 /* void ProgramParameteri(uint program, enum pname, int value); */
 Program_Parameter :: enum u32 {
@@ -132,7 +133,6 @@ Program_Resource_Property :: enum u32 {
 }
 
 /* int GetProgramResourceLocation(uint program, enum programInterface, const char *name); */
-
 Program_Resource_Location :: enum u32 {
 	UNIFORM                            = UNIFORM,
 	PROGRAM_INPUT                      = PROGRAM_INPUT,
@@ -146,7 +146,6 @@ Program_Resource_Location :: enum u32 {
 }
 
 /* int GetProgramResourceLocationIndex(uint program, enum programInterface, const char *name); */
-
 Program_Resource_Location_Index :: enum u32 {
 	PROGRAM_OUTPUT = PROGRAM_OUTPUT,
 }
@@ -155,7 +154,6 @@ Program_Resource_Location_Index :: enum u32 {
 /* Program Pipeline Objects [7.4] */
 
 /* void UseProgramStages(uint pipeline, bitfield stages, uint program); */
-
 Program_Stages_Bits :: enum u32 {
 	COMPUTE_SHADER_BIT         = COMPUTE_SHADER_BIT,
 	VERTEX_SHADER_BIT          = VERTEX_SHADER_BIT,
@@ -445,9 +443,9 @@ Get_Shader_Parameter :: enum u32 {
 	SHADER_SOURCE_LENGTH = SHADER_SOURCE_LENGTH,
 	SPIR_V_BINARY        = SPIR_V_BINARY,
 
-	// NOTE(tarik): Exists on Quick Reference Card, but not Specification.
+	// TODO(tarik): Exists on Quick Reference Card, but not Specification.
 	//              See pages 167, 612.
-	COMPUTE_SHADER       = COMPUTE_SHADER,
+	// COMPUTE_SHADER       = COMPUTE_SHADER,
 }
 
 /* void GetProgramiv(uint program, enum pname, int *params); */
@@ -504,13 +502,22 @@ Shader_Precision_Format_Shader_Type :: enum u32 {
 	FRAGMENT_SHADER = FRAGMENT_SHADER,
 }
 
+Shader_Precision_Type :: enum u32 {
+	LOW_FLOAT    = LOW_FLOAT,
+	MEDIUM_FLOAT = MEDIUM_FLOAT,
+	HIGH_FLOAT   = HIGH_FLOAT,
+	LOW_INT      = LOW_INT,
+	MEDIUM_INT   = MEDIUM_INT,
+	HIGH_INT     = HIGH_INT,
+}
+
 /* void GetUniformSubroutineuiv(enum shadertype, int location, uint *params); */
 // shadertype: Subroutine_Uniform_Shader_Type
 
 /* GetProgramStageiv(uint program, enum shadertype, enum pname, int *values); */
 // shadertype: Subroutine_Uniform_Shader_Type
 
-Get_Program_Stageiv_Parameter :: enum u32 {
+Program_Stage_Parameter :: enum u32 {
 	ACTIVE_SUBROUTINE_UNIFORM_LOCATIONS  = ACTIVE_SUBROUTINE_UNIFORM_LOCATIONS,
 	ACTIVE_SUBROUTINE_UNIFORMS           = ACTIVE_SUBROUTINE_UNIFORMS,
 	ACTIVE_SUBROUTINES                   = ACTIVE_SUBROUTINES,

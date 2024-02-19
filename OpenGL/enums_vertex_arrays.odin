@@ -3,7 +3,7 @@ package vendor_gl
 /* Generic Vertex Attribute Arrays [10.3.2] */
 
 /* void VertexAttribFormat(uint attribindex, int size, enum type, boolean normalized, unit relativeoffset); */
-Vertex_Attrib_Format_Type :: enum u32 {
+Vertex_Attrib_Type :: enum u32 {
 	BYTE                         = BYTE,
 	UNSIGNED_BYTE                = UNSIGNED_BYTE,
 	SHORT                        = SHORT,
@@ -20,7 +20,7 @@ Vertex_Attrib_Format_Type :: enum u32 {
 }
 
 /* void VertexAttribIFormat(uint attribindex, int size, enum type, unit relativeoffset); */
-Vertex_AttribI_Format_Type :: enum u32 {
+Vertex_AttribI_Type :: enum u32 {
 	BYTE           = BYTE,
 	UNSIGNED_BYTE  = UNSIGNED_BYTE,
 	SHORT          = SHORT,
@@ -30,27 +30,27 @@ Vertex_AttribI_Format_Type :: enum u32 {
 }
 
 /* void VertexAttribLFormat(uint attribindex, int size, enum type, unit relativeoffset); */
-Vertex_AttribL_Format_Type :: enum u32 {
+Vertex_AttribL_Type :: enum u32 {
 	DOUBLE = DOUBLE,
 }
 
 /* void VertexArrayAttribFormat(uint vaobj, uint attribindex, int size, enum type, boolean normalized, uint relativeoffset); */
-// type: Vertex_Attrib_Format_Type
+// type: Vertex_Attrib_Type
 
 /* void VertexArrayAttribIFormat(uint vaobj, uint attribindex, int size, enum type, uint relativeoffset); */
-// type: Vertex_AttribI_Format_Type
+// type: Vertex_AttribI_Type
 
 /* void VertexArrayAttribLFormat(uint vaobj, uint attribindex, int size, enum type, uint relativeoffset); */
-// type: Vertex_AttribL_Format_Type
+// type: Vertex_AttribL_Type
 
 /* void VertexAttribPointer(uint index, int size, enum type, boolean normalized, sizei stride, const void *pointer); */
-// type: Vertex_Attrib_Format_Type
+// type: Vertex_Attrib_Type
 
 /* void VertexAttribIPointer(uint index, int size, enum type, sizei stride, const void *pointer); */
-// type: Vertex_AttribI_Format_Type
+// type: Vertex_AttribI_Type
 
 /* void VertexAttribLPointer(uint index, int size, enum type, sizei stride, const void*pointer); */
-// type: Vertex_AttribL_Format_Type
+// type: Vertex_AttribL_Type
 
 
 /* Drawing Commands [10.4] */
@@ -69,12 +69,6 @@ Draw_Mode :: enum u32 {
 	TRIANGLES_ADJACENCY      = TRIANGLES_ADJACENCY,
 	TRIANGLE_STRIP_ADJACENCY = TRIANGLE_STRIP_ADJACENCY,
 	PATCHES                  = PATCHES,
-}
-
-Draw_Type :: enum u32 {
-	UNSIGNED_BYTE  = UNSIGNED_BYTE,
-	UNSIGNED_SHORT = UNSIGNED_SHORT,
-	UNSIGNED_INT   = UNSIGNED_INT,
 }
 
 /* void DrawArraysInstancedBaseInstance(enum mode, int first, sizei count, sizei instancecount, uint baseinstance); */
@@ -97,7 +91,12 @@ Draw_Type :: enum u32 {
 
 /* void DrawElements(enum mode, sizei count, enum type, const void *indices); */
 // mode: Draw_Mode
-// type: Draw_Type
+
+Draw_Type :: enum u32 {
+	UNSIGNED_BYTE  = UNSIGNED_BYTE,
+	UNSIGNED_SHORT = UNSIGNED_SHORT,
+	UNSIGNED_INT   = UNSIGNED_INT,
+}
 
 /* void DrawElementsInstancedBaseInstance(enum mode, sizei count, enum type, const void *indices, sizei instancecount, uint baseinstance); */
 // mode: Draw_Mode

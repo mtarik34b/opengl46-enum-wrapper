@@ -2,6 +2,7 @@ package vendor_gl
 
 /* Sync Objects and Fences [4.1] */
 
+/* sync FenceSync(enum condition, bitfield flags); */
 Fence_Sync_Condition :: enum u32 {
 	SYNC_GPU_COMMANDS_COMPLETE = SYNC_GPU_COMMANDS_COMPLETE,
 }
