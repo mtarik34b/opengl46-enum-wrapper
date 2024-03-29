@@ -437,7 +437,7 @@ Is_Enabled_Cap :: enum u32 {
 	Sample_Mask                   = SAMPLE_MASK,
 	Stencil_Test                  = STENCIL_TEST,
 	Depth_Test                    = DEPTH_TEST,
-	Framebuffer_Srgb              = FRAMEBUFFER_SRGB,
+	Framebuffer_SRGB              = FRAMEBUFFER_SRGB,
 	Dither                        = DITHER,
 	Color_Logic_Op                = COLOR_LOGIC_OP,
 	Program_Point_Size            = PROGRAM_POINT_SIZE,

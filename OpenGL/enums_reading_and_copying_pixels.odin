@@ -35,21 +35,21 @@ Color_Clamping :: enum u32 {
 
 /* void BlitFramebuffer(int srcX0, int srcY0, int srcX1, int srcY1, int dstX0, int dstY0, int dstX1, int dstY1, bitfield mask, enum filter); */
 Blit_Mask_Bits :: enum u32 {
-	COLOR_BUFFER_BIT   = COLOR_BUFFER_BIT,
-	DEPTH_BUFFER_BIT   = DEPTH_BUFFER_BIT,
-	STENCIL_BUFFER_BIT = STENCIL_BUFFER_BIT,
+	Color_Buffer_Bit   = COLOR_BUFFER_BIT,
+	Depth_Buffer_Bit   = DEPTH_BUFFER_BIT,
+	Stencil_Buffer_Bit = STENCIL_BUFFER_BIT,
 }
 
 // NOTE(tarik): This shall suffice until Odin has real bitfields.
 Blit_Mask :: enum u32 {
-	NONE                     = NONE,
-	COLOR_BUFFER_BIT         = COLOR_BUFFER_BIT,
-	DEPTH_BUFFER_BIT         = DEPTH_BUFFER_BIT,
-	STENCIL_BUFFER_BIT       = STENCIL_BUFFER_BIT,
-	COLOR_DEPTH_BITS         = COLOR_BUFFER_BIT | DEPTH_BUFFER_BIT,
-	COLOR_STENCIL_BITS       = COLOR_BUFFER_BIT | STENCIL_BUFFER_BIT,
-	DEPTH_STENCIL_BITS       = DEPTH_BUFFER_BIT | STENCIL_BUFFER_BIT,
-	COLOR_DEPTH_STENCIL_BITS = COLOR_BUFFER_BIT | DEPTH_BUFFER_BIT | STENCIL_BUFFER_BIT,
+	None                     = NONE,
+	Color_Buffer_Bit         = COLOR_BUFFER_BIT,
+	Depth_Buffer_Bit         = DEPTH_BUFFER_BIT,
+	Stencil_Buffer_Bit       = STENCIL_BUFFER_BIT,
+	Color_Depth_Bits         = COLOR_BUFFER_BIT | DEPTH_BUFFER_BIT,
+	Color_Stencil_Bits       = COLOR_BUFFER_BIT | STENCIL_BUFFER_BIT,
+	Depth_Stencil_Bits       = DEPTH_BUFFER_BIT | STENCIL_BUFFER_BIT,
+	Color_Depth_Stencil_Bits = COLOR_BUFFER_BIT | DEPTH_BUFFER_BIT | STENCIL_BUFFER_BIT,
 }
 
 Blit_Framebuffer_Filter :: enum u32 {

@@ -4,9 +4,9 @@ package vendor_gl
 
 /* void BindFramebuffer(enum target, uint framebuffer); */
 Framebuffer_Target :: enum u32 {
-	DRAW_FRAMEBUFFER = DRAW_FRAMEBUFFER,
-	READ_FRAMEBUFFER = READ_FRAMEBUFFER,
-	FRAMEBUFFER      = FRAMEBUFFER,
+	Draw_Framebuffer = DRAW_FRAMEBUFFER,
+	Read_Framebuffer = READ_FRAMEBUFFER,
+	Framebuffer      = FRAMEBUFFER,
 }
 
 
@@ -16,11 +16,11 @@ Framebuffer_Target :: enum u32 {
 // target: Framebuffer_Target
 
 Framebuffer_Parameteri :: enum u32 {
-	FRAMEBUFFER_DEFAULT_WIDTH                  = FRAMEBUFFER_DEFAULT_WIDTH,
-	FRAMEBUFFER_DEFAULT_HEIGHT                 = FRAMEBUFFER_DEFAULT_HEIGHT,
-	FRAMEBUFFER_DEFAULT_LAYERS                 = FRAMEBUFFER_DEFAULT_LAYERS,
-	FRAMEBUFFER_DEFAULT_SAMPLES                = FRAMEBUFFER_DEFAULT_SAMPLES,
-	FRAMEBUFFER_DEFAULT_FIXED_SAMPLE_LOCATIONS = FRAMEBUFFER_DEFAULT_FIXED_SAMPLE_LOCATIONS,
+	Framebuffer_Default_Width                  = FRAMEBUFFER_DEFAULT_WIDTH,
+	Framebuffer_Default_Height                 = FRAMEBUFFER_DEFAULT_HEIGHT,
+	Framebuffer_Default_Layers                 = FRAMEBUFFER_DEFAULT_LAYERS,
+	Framebuffer_Default_Samples                = FRAMEBUFFER_DEFAULT_SAMPLES,
+	Framebuffer_Default_Fixed_Sample_Locations = FRAMEBUFFER_DEFAULT_FIXED_SAMPLE_LOCATIONS,
 }
 
 /* void NamedFramebufferParameteri(uint framebuffer, enum pname, int param); */
@@ -33,18 +33,18 @@ Framebuffer_Parameteri :: enum u32 {
 // target: Framebuffer_Target
 
 Framebuffer_Parameteriv :: enum u32 {
-	FRAMEBUFFER_DEFAULT_WIDTH                  = FRAMEBUFFER_DEFAULT_WIDTH,
-	FRAMEBUFFER_DEFAULT_HEIGHT                 = FRAMEBUFFER_DEFAULT_HEIGHT,
-	FRAMEBUFFER_DEFAULT_LAYERS                 = FRAMEBUFFER_DEFAULT_LAYERS,
-	FRAMEBUFFER_DEFAULT_SAMPLES                = FRAMEBUFFER_DEFAULT_SAMPLES,
-	FRAMEBUFFER_DEFAULT_FIXED_SAMPLE_LOCATIONS = FRAMEBUFFER_DEFAULT_FIXED_SAMPLE_LOCATIONS,
+	Framebuffer_Default_Width                  = FRAMEBUFFER_DEFAULT_WIDTH,
+	Framebuffer_Default_Height                 = FRAMEBUFFER_DEFAULT_HEIGHT,
+	Framebuffer_Default_Layers                 = FRAMEBUFFER_DEFAULT_LAYERS,
+	Framebuffer_Default_Samples                = FRAMEBUFFER_DEFAULT_SAMPLES,
+	Framebuffer_Default_Fixed_Sample_Locations = FRAMEBUFFER_DEFAULT_FIXED_SAMPLE_LOCATIONS,
 
-	DOUBLEBUFFER                               = DOUBLEBUFFER,
-	IMPLEMENTATION_COLOR_READ_FORMAT           = IMPLEMENTATION_COLOR_READ_FORMAT,
-	IMPLEMENTATION_COLOR_READ_TYPE             = IMPLEMENTATION_COLOR_READ_TYPE,
-	SAMPLES                                    = SAMPLES,
-	SAMPLE_BUFFERS                             = SAMPLE_BUFFERS,
-	STEREO                                     = STEREO,
+	Doublebuffer                               = DOUBLEBUFFER,
+	Implementation_Color_Read_Format           = IMPLEMENTATION_COLOR_READ_FORMAT,
+	Implementation_Color_Read_Type             = IMPLEMENTATION_COLOR_READ_TYPE,
+	Samples                                    = SAMPLES,
+	Sample_Buffers                             = SAMPLE_BUFFERS,
+	Stereo                                     = STEREO,
 }
 
 /* void GetNamedFramebufferParameteriv(uint framebuffer, enum pname, int *params); */
@@ -54,67 +54,67 @@ Framebuffer_Parameteriv :: enum u32 {
 // target: Framebuffer_Target
 
 Framebuffer_Attachment :: enum u32 {
-	FRONT                    = FRONT,
-	FRONT_LEFT               = FRONT_LEFT,
-	FRONT_RIGHT              = FRONT_RIGHT,
-	BACK                     = BACK,
-	BACK_LEFT                = BACK_LEFT,
-	BACK_RIGHT               = BACK_RIGHT,
-	DEPTH                    = DEPTH,
-	STENCIL                  = STENCIL,
+	Front                    = FRONT,
+	Front_Left               = FRONT_LEFT,
+	Front_Right              = FRONT_RIGHT,
+	Back                     = BACK,
+	Back_Left                = BACK_LEFT,
+	Back_Right               = BACK_RIGHT,
+	Depth                    = DEPTH,
+	Stencil                  = STENCIL,
 
-	DEPTH_ATTACHMENT         = DEPTH_ATTACHMENT,
-	STENCIL_ATTACHMENT       = STENCIL_ATTACHMENT,
-	DEPTH_STENCIL_ATTACHMENT = DEPTH_STENCIL_ATTACHMENT,
-	COLOR_ATTACHMENT0        = COLOR_ATTACHMENT0,
-	COLOR_ATTACHMENT1        = COLOR_ATTACHMENT1,
-	COLOR_ATTACHMENT2        = COLOR_ATTACHMENT2,
-	COLOR_ATTACHMENT3        = COLOR_ATTACHMENT3,
-	COLOR_ATTACHMENT4        = COLOR_ATTACHMENT4,
-	COLOR_ATTACHMENT5        = COLOR_ATTACHMENT5,
-	COLOR_ATTACHMENT6        = COLOR_ATTACHMENT6,
-	COLOR_ATTACHMENT7        = COLOR_ATTACHMENT7,
-	COLOR_ATTACHMENT8        = COLOR_ATTACHMENT8,
-	COLOR_ATTACHMENT9        = COLOR_ATTACHMENT9,
-	COLOR_ATTACHMENT10       = COLOR_ATTACHMENT10,
-	COLOR_ATTACHMENT11       = COLOR_ATTACHMENT11,
-	COLOR_ATTACHMENT12       = COLOR_ATTACHMENT12,
-	COLOR_ATTACHMENT13       = COLOR_ATTACHMENT13,
-	COLOR_ATTACHMENT14       = COLOR_ATTACHMENT14,
-	COLOR_ATTACHMENT15       = COLOR_ATTACHMENT15,
-	COLOR_ATTACHMENT16       = COLOR_ATTACHMENT16,
-	COLOR_ATTACHMENT17       = COLOR_ATTACHMENT17,
-	COLOR_ATTACHMENT18       = COLOR_ATTACHMENT18,
-	COLOR_ATTACHMENT19       = COLOR_ATTACHMENT19,
-	COLOR_ATTACHMENT20       = COLOR_ATTACHMENT20,
-	COLOR_ATTACHMENT21       = COLOR_ATTACHMENT21,
-	COLOR_ATTACHMENT22       = COLOR_ATTACHMENT22,
-	COLOR_ATTACHMENT23       = COLOR_ATTACHMENT23,
-	COLOR_ATTACHMENT24       = COLOR_ATTACHMENT24,
-	COLOR_ATTACHMENT25       = COLOR_ATTACHMENT25,
-	COLOR_ATTACHMENT26       = COLOR_ATTACHMENT26,
-	COLOR_ATTACHMENT27       = COLOR_ATTACHMENT27,
-	COLOR_ATTACHMENT28       = COLOR_ATTACHMENT28,
-	COLOR_ATTACHMENT29       = COLOR_ATTACHMENT29,
-	COLOR_ATTACHMENT30       = COLOR_ATTACHMENT30,
-	COLOR_ATTACHMENT31       = COLOR_ATTACHMENT31,
+	Depth_Attachment         = DEPTH_ATTACHMENT,
+	Stencil_Attachment       = STENCIL_ATTACHMENT,
+	Depth_Stencil_Attachment = DEPTH_STENCIL_ATTACHMENT,
+	Color_Attachment0        = COLOR_ATTACHMENT0,
+	Color_Attachment1        = COLOR_ATTACHMENT1,
+	Color_Attachment2        = COLOR_ATTACHMENT2,
+	Color_Attachment3        = COLOR_ATTACHMENT3,
+	Color_Attachment4        = COLOR_ATTACHMENT4,
+	Color_Attachment5        = COLOR_ATTACHMENT5,
+	Color_Attachment6        = COLOR_ATTACHMENT6,
+	Color_Attachment7        = COLOR_ATTACHMENT7,
+	Color_Attachment8        = COLOR_ATTACHMENT8,
+	Color_Attachment9        = COLOR_ATTACHMENT9,
+	Color_Attachment10       = COLOR_ATTACHMENT10,
+	Color_Attachment11       = COLOR_ATTACHMENT11,
+	Color_Attachment12       = COLOR_ATTACHMENT12,
+	Color_Attachment13       = COLOR_ATTACHMENT13,
+	Color_Attachment14       = COLOR_ATTACHMENT14,
+	Color_Attachment15       = COLOR_ATTACHMENT15,
+	Color_Attachment16       = COLOR_ATTACHMENT16,
+	Color_Attachment17       = COLOR_ATTACHMENT17,
+	Color_Attachment18       = COLOR_ATTACHMENT18,
+	Color_Attachment19       = COLOR_ATTACHMENT19,
+	Color_Attachment20       = COLOR_ATTACHMENT20,
+	Color_Attachment21       = COLOR_ATTACHMENT21,
+	Color_Attachment22       = COLOR_ATTACHMENT22,
+	Color_Attachment23       = COLOR_ATTACHMENT23,
+	Color_Attachment24       = COLOR_ATTACHMENT24,
+	Color_Attachment25       = COLOR_ATTACHMENT25,
+	Color_Attachment26       = COLOR_ATTACHMENT26,
+	Color_Attachment27       = COLOR_ATTACHMENT27,
+	Color_Attachment28       = COLOR_ATTACHMENT28,
+	Color_Attachment29       = COLOR_ATTACHMENT29,
+	Color_Attachment30       = COLOR_ATTACHMENT30,
+	Color_Attachment31       = COLOR_ATTACHMENT31,
 }
 
 Framebuffer_Attachment_Parameter :: enum u32 {
-	FRAMEBUFFER_ATTACHMENT_RED_SIZE              = FRAMEBUFFER_ATTACHMENT_RED_SIZE,
-	FRAMEBUFFER_ATTACHMENT_GREEN_SIZE            = FRAMEBUFFER_ATTACHMENT_GREEN_SIZE,
-	FRAMEBUFFER_ATTACHMENT_BLUE_SIZE             = FRAMEBUFFER_ATTACHMENT_BLUE_SIZE,
-	FRAMEBUFFER_ATTACHMENT_ALPHA_SIZE            = FRAMEBUFFER_ATTACHMENT_ALPHA_SIZE,
-	FRAMEBUFFER_ATTACHMENT_DEPTH_SIZE            = FRAMEBUFFER_ATTACHMENT_DEPTH_SIZE,
-	FRAMEBUFFER_ATTACHMENT_STENCIL_SIZE          = FRAMEBUFFER_ATTACHMENT_STENCIL_SIZE,
-	FRAMEBUFFER_ATTACHMENT_COMPONENT_TYPE        = FRAMEBUFFER_ATTACHMENT_COMPONENT_TYPE,
-	FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING        = FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING,
-	FRAMEBUFFER_ATTACHMENT_OBJECT_NAME           = FRAMEBUFFER_ATTACHMENT_OBJECT_NAME,
-	FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE           = FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE,
-	FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL         = FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL,
-	FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE = FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE,
-	FRAMEBUFFER_ATTACHMENT_LAYERED               = FRAMEBUFFER_ATTACHMENT_LAYERED,
-	FRAMEBUFFER_ATTACHMENT_TEXTURE_LAYER         = FRAMEBUFFER_ATTACHMENT_TEXTURE_LAYER,
+	Framebuffer_Attachment_Red_Size              = FRAMEBUFFER_ATTACHMENT_RED_SIZE,
+	Framebuffer_Attachment_Green_Size            = FRAMEBUFFER_ATTACHMENT_GREEN_SIZE,
+	Framebuffer_Attachment_Blue_Size             = FRAMEBUFFER_ATTACHMENT_BLUE_SIZE,
+	Framebuffer_Attachment_Alpha_Size            = FRAMEBUFFER_ATTACHMENT_ALPHA_SIZE,
+	Framebuffer_Attachment_Depth_Size            = FRAMEBUFFER_ATTACHMENT_DEPTH_SIZE,
+	Framebuffer_Attachment_Stencil_Size          = FRAMEBUFFER_ATTACHMENT_STENCIL_SIZE,
+	Framebuffer_Attachment_Component_Type        = FRAMEBUFFER_ATTACHMENT_COMPONENT_TYPE,
+	Framebuffer_Attachment_Color_Encoding        = FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING,
+	Framebuffer_Attachment_Object_Name           = FRAMEBUFFER_ATTACHMENT_OBJECT_NAME,
+	Framebuffer_Attachment_Object_Type           = FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE,
+	Framebuffer_Attachment_Texture_Level         = FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL,
+	Framebuffer_Attachment_Texture_Cube_Map_Face = FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE,
+	Framebuffer_Attachment_Layered               = FRAMEBUFFER_ATTACHMENT_LAYERED,
+	Framebuffer_Attachment_Texture_Layer         = FRAMEBUFFER_ATTACHMENT_TEXTURE_LAYER,
 }
 
 /* void GetNamedFramebufferAttachmentParameteriv(uint framebuffer, enum attachment, enum pname, int *params); */
@@ -126,7 +126,7 @@ Framebuffer_Attachment_Parameter :: enum u32 {
 
 /* void BindRenderbuffer(enum target, uint renderbuffer); */
 Renderbuffer_Target :: enum u32 {
-	RENDERBUFFER = RENDERBUFFER,
+	Renderbuffer = RENDERBUFFER,
 }
 
 /* void RenderbufferStorageMultisample(enum target, sizei samples, enum internalformat, sizei width, sizei height); */
@@ -149,16 +149,16 @@ Renderbuffer_Target :: enum u32 {
 /* void GetRenderbufferParameteriv(enum target, enum pname, int *params); */
 // target: Renderbuffer_Target
 Renderbuffer_Parameter :: enum u32 {
-	RENDERBUFFER_WIDTH           = RENDERBUFFER_WIDTH,
-	RENDERBUFFER_HEIGHT          = RENDERBUFFER_HEIGHT,
-	RENDERBUFFER_INTERNAL_FORMAT = RENDERBUFFER_INTERNAL_FORMAT,
-	RENDERBUFFER_RED_SIZE        = RENDERBUFFER_RED_SIZE,
-	RENDERBUFFER_GREEN_SIZE      = RENDERBUFFER_GREEN_SIZE,
-	RENDERBUFFER_BLUE_SIZE       = RENDERBUFFER_BLUE_SIZE,
-	RENDERBUFFER_ALPHA_SIZE      = RENDERBUFFER_ALPHA_SIZE,
-	RENDERBUFFER_DEPTH_SIZE      = RENDERBUFFER_DEPTH_SIZE,
-	RENDERBUFFER_STENCIL_SIZE    = RENDERBUFFER_STENCIL_SIZE,
-	RENDERBUFFER_SAMPLES         = RENDERBUFFER_SAMPLES,
+	Renderbuffer_Width           = RENDERBUFFER_WIDTH,
+	Renderbuffer_Height          = RENDERBUFFER_HEIGHT,
+	Renderbuffer_Internal_Format = RENDERBUFFER_INTERNAL_FORMAT,
+	Renderbuffer_Red_Size        = RENDERBUFFER_RED_SIZE,
+	Renderbuffer_Green_Size      = RENDERBUFFER_GREEN_SIZE,
+	Renderbuffer_Blue_Size       = RENDERBUFFER_BLUE_SIZE,
+	Renderbuffer_Alpha_Size      = RENDERBUFFER_ALPHA_SIZE,
+	Renderbuffer_Depth_Size      = RENDERBUFFER_DEPTH_SIZE,
+	Renderbuffer_Stencil_Size    = RENDERBUFFER_STENCIL_SIZE,
+	Renderbuffer_Samples         = RENDERBUFFER_SAMPLES,
 }
 
 /* void GetNamedRenderbufferParameteriv(uint renderbuffer, enum pname, int *params); */

@@ -5,17 +5,17 @@ package vendor_gl
 /* uint CreateShader(enum type); */
 // NOTE(tarik): Since helpers.odin defined an own Shader_Type, this is unused.
 _Shader_Type :: enum u32 {
-	COMPUTE_SHADER         = COMPUTE_SHADER,
-	FRAGMENT_SHADER        = FRAGMENT_SHADER,
-	GEOMETRY_SHADER        = GEOMETRY_SHADER,
-	VERTEX_SHADER          = VERTEX_SHADER,
-	TESS_EVALUATION_SHADER = TESS_EVALUATION_SHADER,
-	TESS_CONTROL_SHADER    = TESS_CONTROL_SHADER,
+	Compute_Shader         = COMPUTE_SHADER,
+	Fragment_Shader        = FRAGMENT_SHADER,
+	Geometry_Shader        = GEOMETRY_SHADER,
+	Vertex_Shader          = VERTEX_SHADER,
+	Tess_Evaluation_Shader = TESS_EVALUATION_SHADER,
+	Tess_Control_Shader    = TESS_CONTROL_SHADER,
 }
 
 /* void ShaderBinary(sizei count, const uint *shaders, enum binaryformat, const void *binary, sizei length); */
 Shader_Binary_Format :: enum u32 {
-	SHADER_BINARY_FORMAT_SPIR_V = SHADER_BINARY_FORMAT_SPIR_V,
+	Shader_Binary_Format_SPIR_V = SHADER_BINARY_FORMAT_SPIR_V,
 }
 
 
@@ -26,8 +26,8 @@ Shader_Binary_Format :: enum u32 {
 
 /* void ProgramParameteri(uint program, enum pname, int value); */
 Program_Parameter :: enum u32 {
-	PROGRAM_SEPARABLE               = PROGRAM_SEPARABLE,
-	PROGRAM_BINARY_RETRIEVABLE_HINT = PROGRAM_BINARY_RETRIEVABLE_HINT,
+	Program_Separable               = PROGRAM_SEPARABLE,
+	Program_Binary_Retrievable_Hint = PROGRAM_BINARY_RETRIEVABLE_HINT,
 }
 
 
@@ -35,63 +35,63 @@ Program_Parameter :: enum u32 {
 
 /* void GetProgramInterfaceiv(uint program, enum programInterface, enum pname, int *params); */
 Program_Interface :: enum u32 {
-	UNIFORM                            = UNIFORM,
-	UNIFORM_BLOCK                      = UNIFORM_BLOCK,
-	ATOMIC_COUNTER_BUFFER              = ATOMIC_COUNTER_BUFFER,
-	PROGRAM_INPUT                      = PROGRAM_INPUT,
-	PROGRAM_OUTPUT                     = PROGRAM_OUTPUT,
+	Uniform                            = UNIFORM,
+	Uniform_Block                      = UNIFORM_BLOCK,
+	Atomic_Counter_Buffer              = ATOMIC_COUNTER_BUFFER,
+	Program_Input                      = PROGRAM_INPUT,
+	Program_Output                     = PROGRAM_OUTPUT,
 
-	VERTEX_SUBROUTINE                  = VERTEX_SUBROUTINE,
-	TESS_CONTROL_SUBROUTINE            = TESS_CONTROL_SUBROUTINE,
-	TESS_EVALUATION_SUBROUTINE         = TESS_EVALUATION_SUBROUTINE,
-	GEOMETRY_SUBROUTINE                = GEOMETRY_SUBROUTINE,
-	FRAGMENT_SUBROUTINE                = FRAGMENT_SUBROUTINE,
-	COMPUTE_SUBROUTINE                 = COMPUTE_SUBROUTINE,
+	Vertex_Subroutine                  = VERTEX_SUBROUTINE,
+	Tess_Control_Subroutine            = TESS_CONTROL_SUBROUTINE,
+	Tess_Evaluation_Subroutine         = TESS_EVALUATION_SUBROUTINE,
+	Geometry_Subroutine                = GEOMETRY_SUBROUTINE,
+	Fragment_Subroutine                = FRAGMENT_SUBROUTINE,
+	Compute_Subroutine                 = COMPUTE_SUBROUTINE,
 
-	VERTEX_SUBROUTINE_UNIFORM          = VERTEX_SUBROUTINE_UNIFORM,
-	TESS_CONTROL_SUBROUTINE_UNIFORM    = TESS_CONTROL_SUBROUTINE_UNIFORM,
-	TESS_EVALUATION_SUBROUTINE_UNIFORM = TESS_EVALUATION_SUBROUTINE_UNIFORM,
-	GEOMETRY_SUBROUTINE_UNIFORM        = GEOMETRY_SUBROUTINE_UNIFORM,
-	FRAGMENT_SUBROUTINE_UNIFORM        = FRAGMENT_SUBROUTINE_UNIFORM,
-	COMPUTE_SUBROUTINE_UNIFORM         = COMPUTE_SUBROUTINE_UNIFORM,
+	Vertex_Subroutine_Uniform          = VERTEX_SUBROUTINE_UNIFORM,
+	Tess_Control_Subroutine_Uniform    = TESS_CONTROL_SUBROUTINE_UNIFORM,
+	Tess_Evaluation_Subroutine_Uniform = TESS_EVALUATION_SUBROUTINE_UNIFORM,
+	Geometry_Subroutine_Uniform        = GEOMETRY_SUBROUTINE_UNIFORM,
+	Fragment_Subroutine_Uniform        = FRAGMENT_SUBROUTINE_UNIFORM,
+	Compute_Subroutine_Uniform         = COMPUTE_SUBROUTINE_UNIFORM,
 
-	TRANSFORM_FEEDBACK_VARYING         = TRANSFORM_FEEDBACK_VARYING,
-	TRANSFORM_FEEDBACK_BUFFER          = TRANSFORM_FEEDBACK_BUFFER,
-	BUFFER_VARIABLE                    = BUFFER_VARIABLE,
-	SHADER_STORAGE_BLOCK               = SHADER_STORAGE_BLOCK,
+	Transform_Feedback_Varying         = TRANSFORM_FEEDBACK_VARYING,
+	Transform_Feedback_Buffer          = TRANSFORM_FEEDBACK_BUFFER,
+	Buffer_Variable                    = BUFFER_VARIABLE,
+	Shader_Storage_Block               = SHADER_STORAGE_BLOCK,
 }
 
 Program_Interface_Parameter :: enum u32 {
-	ACTIVE_RESOURCES               = ACTIVE_RESOURCES,
-	MAX_NAME_LENGTH                = MAX_NAME_LENGTH,
-	MAX_NUM_ACTIVE_VARIABLES       = MAX_NUM_ACTIVE_VARIABLES,
-	MAX_NUM_COMPATIBLE_SUBROUTINES = MAX_NUM_COMPATIBLE_SUBROUTINES,
+	Active_Resources               = ACTIVE_RESOURCES,
+	Max_Name_Length                = MAX_NAME_LENGTH,
+	Max_Num_Active_Variables       = MAX_NUM_ACTIVE_VARIABLES,
+	Max_Num_Compatible_Subroutines = MAX_NUM_COMPATIBLE_SUBROUTINES,
 }
 
 /* uint GetProgramResourceIndex(uint program, enum programInterface, const char *name); */
 Program_Resource_Interface :: enum u32 {
-	UNIFORM                            = UNIFORM,
-	UNIFORM_BLOCK                      = UNIFORM_BLOCK,
-	PROGRAM_INPUT                      = PROGRAM_INPUT,
-	PROGRAM_OUTPUT                     = PROGRAM_OUTPUT,
+	Uniform                            = UNIFORM,
+	Uniform_Block                      = UNIFORM_BLOCK,
+	Program_Input                      = PROGRAM_INPUT,
+	Program_Output                     = PROGRAM_OUTPUT,
 
-	VERTEX_SUBROUTINE                  = VERTEX_SUBROUTINE,
-	TESS_CONTROL_SUBROUTINE            = TESS_CONTROL_SUBROUTINE,
-	TESS_EVALUATION_SUBROUTINE         = TESS_EVALUATION_SUBROUTINE,
-	GEOMETRY_SUBROUTINE                = GEOMETRY_SUBROUTINE,
-	FRAGMENT_SUBROUTINE                = FRAGMENT_SUBROUTINE,
-	COMPUTE_SUBROUTINE                 = COMPUTE_SUBROUTINE,
+	Vertex_Subroutine                  = VERTEX_SUBROUTINE,
+	Tess_Control_Subroutine            = TESS_CONTROL_SUBROUTINE,
+	Tess_Evaluation_Subroutine         = TESS_EVALUATION_SUBROUTINE,
+	Geometry_Subroutine                = GEOMETRY_SUBROUTINE,
+	Fragment_Subroutine                = FRAGMENT_SUBROUTINE,
+	Compute_Subroutine                 = COMPUTE_SUBROUTINE,
 
-	VERTEX_SUBROUTINE_UNIFORM          = VERTEX_SUBROUTINE_UNIFORM,
-	TESS_CONTROL_SUBROUTINE_UNIFORM    = TESS_CONTROL_SUBROUTINE_UNIFORM,
-	TESS_EVALUATION_SUBROUTINE_UNIFORM = TESS_EVALUATION_SUBROUTINE_UNIFORM,
-	GEOMETRY_SUBROUTINE_UNIFORM        = GEOMETRY_SUBROUTINE_UNIFORM,
-	FRAGMENT_SUBROUTINE_UNIFORM        = FRAGMENT_SUBROUTINE_UNIFORM,
-	COMPUTE_SUBROUTINE_UNIFORM         = COMPUTE_SUBROUTINE_UNIFORM,
+	Vertex_Subroutine_Uniform          = VERTEX_SUBROUTINE_UNIFORM,
+	Tess_Control_Subroutine_Uniform    = TESS_CONTROL_SUBROUTINE_UNIFORM,
+	Tess_Evaluation_Subroutine_Uniform = TESS_EVALUATION_SUBROUTINE_UNIFORM,
+	Geometry_Subroutine_Uniform        = GEOMETRY_SUBROUTINE_UNIFORM,
+	Fragment_Subroutine_Uniform        = FRAGMENT_SUBROUTINE_UNIFORM,
+	Compute_Subroutine_Uniform         = COMPUTE_SUBROUTINE_UNIFORM,
 
-	TRANSFORM_FEEDBACK_VARYING         = TRANSFORM_FEEDBACK_VARYING,
-	BUFFER_VARIABLE                    = BUFFER_VARIABLE,
-	SHADER_STORAGE_BLOCK               = SHADER_STORAGE_BLOCK,
+	Transform_Feedback_Varying         = TRANSFORM_FEEDBACK_VARYING,
+	Buffer_Variable                    = BUFFER_VARIABLE,
+	Shader_Storage_Block               = SHADER_STORAGE_BLOCK,
 }
 
 /* void GetProgramResourceName(uint program, enum programInterface, uint index, sizei bufSize, sizei *length, char *name); */
@@ -101,53 +101,53 @@ Program_Resource_Interface :: enum u32 {
 // programInterface: Program_Interface
 
 Program_Resource_Property :: enum u32 {
-	ACTIVE_VARIABLES                     = ACTIVE_VARIABLES,
-	BUFFER_BINDING                       = BUFFER_BINDING,
-	NUM_ACTIVE_VARIABLES                 = NUM_ACTIVE_VARIABLES,
-	ARRAY_SIZE                           = ARRAY_SIZE,
-	ARRAY_STRIDE                         = ARRAY_STRIDE,
-	BLOCK_INDEX                          = BLOCK_INDEX,
-	IS_ROW_MAJOR                         = IS_ROW_MAJOR,
-	MATRIX_STRIDE                        = MATRIX_STRIDE,
-	ATOMIC_COUNTER_BUFFER_INDEX          = ATOMIC_COUNTER_BUFFER_INDEX,
-	BUFFER_DATA_SIZE                     = BUFFER_DATA_SIZE,
-	NUM_COMPATIBLE_SUBROUTINES           = NUM_COMPATIBLE_SUBROUTINES,
-	COMPATIBLE_SUBROUTINES               = COMPATIBLE_SUBROUTINES,
-	IS_PER_PATCH                         = IS_PER_PATCH,
-	LOCATION                             = LOCATION,
-	LOCATION_COMPONENT                   = LOCATION_COMPONENT,
-	LOCATION_INDEX                       = LOCATION_INDEX,
-	NAME_LENGTH                          = NAME_LENGTH,
-	OFFSET                               = OFFSET,
-	REFERENCED_BY_VERTEX_SHADER          = REFERENCED_BY_VERTEX_SHADER,
-	REFERENCED_BY_TESS_CONTROL_SHADER    = REFERENCED_BY_TESS_CONTROL_SHADER,
-	REFERENCED_BY_TESS_EVALUATION_SHADER = REFERENCED_BY_TESS_EVALUATION_SHADER,
-	REFERENCED_BY_GEOMETRY_SHADER        = REFERENCED_BY_GEOMETRY_SHADER,
-	REFERENCED_BY_FRAGMENT_SHADER        = REFERENCED_BY_FRAGMENT_SHADER,
-	REFERENCED_BY_COMPUTE_SHADER         = REFERENCED_BY_COMPUTE_SHADER,
-	TRANSFORM_FEEDBACK_BUFFER_INDEX      = TRANSFORM_FEEDBACK_BUFFER_INDEX,
-	TRANSFORM_FEEDBACK_BUFFER_STRIDE     = TRANSFORM_FEEDBACK_BUFFER_STRIDE,
-	TOP_LEVEL_ARRAY_SIZE                 = TOP_LEVEL_ARRAY_SIZE,
-	TOP_LEVEL_ARRAY_STRIDE               = TOP_LEVEL_ARRAY_STRIDE,
-	TYPE                                 = TYPE,
+	Active_Variables                     = ACTIVE_VARIABLES,
+	Buffer_Binding                       = BUFFER_BINDING,
+	Num_Active_Variables                 = NUM_ACTIVE_VARIABLES,
+	Array_Size                           = ARRAY_SIZE,
+	Array_Stride                         = ARRAY_STRIDE,
+	Block_Index                          = BLOCK_INDEX,
+	Is_Row_Major                         = IS_ROW_MAJOR,
+	Matrix_Stride                        = MATRIX_STRIDE,
+	Atomic_Counter_Buffer_Index          = ATOMIC_COUNTER_BUFFER_INDEX,
+	Buffer_Data_Size                     = BUFFER_DATA_SIZE,
+	Num_Compatible_Subroutines           = NUM_COMPATIBLE_SUBROUTINES,
+	Compatible_Subroutines               = COMPATIBLE_SUBROUTINES,
+	Is_Per_Patch                         = IS_PER_PATCH,
+	Location                             = LOCATION,
+	Location_Component                   = LOCATION_COMPONENT,
+	Location_Index                       = LOCATION_INDEX,
+	Name_Length                          = NAME_LENGTH,
+	Offset                               = OFFSET,
+	Referenced_By_Vertex_Shader          = REFERENCED_BY_VERTEX_SHADER,
+	Referenced_By_Tess_Control_Shader    = REFERENCED_BY_TESS_CONTROL_SHADER,
+	Referenced_By_Tess_Evaluation_Shader = REFERENCED_BY_TESS_EVALUATION_SHADER,
+	Referenced_By_Geometry_Shader        = REFERENCED_BY_GEOMETRY_SHADER,
+	Referenced_By_Fragment_Shader        = REFERENCED_BY_FRAGMENT_SHADER,
+	Referenced_By_Compute_Shader         = REFERENCED_BY_COMPUTE_SHADER,
+	Transform_Feedback_Buffer_Index      = TRANSFORM_FEEDBACK_BUFFER_INDEX,
+	Transform_Feedback_Buffer_Stride     = TRANSFORM_FEEDBACK_BUFFER_STRIDE,
+	Top_Level_Array_Size                 = TOP_LEVEL_ARRAY_SIZE,
+	Top_Level_Array_Stride               = TOP_LEVEL_ARRAY_STRIDE,
+	Type                                 = TYPE,
 }
 
 /* int GetProgramResourceLocation(uint program, enum programInterface, const char *name); */
 Program_Resource_Location :: enum u32 {
-	UNIFORM                            = UNIFORM,
-	PROGRAM_INPUT                      = PROGRAM_INPUT,
-	PROGRAM_OUTPUT                     = PROGRAM_OUTPUT,
-	VERTEX_SUBROUTINE_UNIFORM          = VERTEX_SUBROUTINE_UNIFORM,
-	TESS_CONTROL_SUBROUTINE_UNIFORM    = TESS_CONTROL_SUBROUTINE_UNIFORM,
-	TESS_EVALUATION_SUBROUTINE_UNIFORM = TESS_EVALUATION_SUBROUTINE_UNIFORM,
-	GEOMETRY_SUBROUTINE_UNIFORM        = GEOMETRY_SUBROUTINE_UNIFORM,
-	FRAGMENT_SUBROUTINE_UNIFORM        = FRAGMENT_SUBROUTINE_UNIFORM,
-	COMPUTE_SUBROUTINE_UNIFORM         = COMPUTE_SUBROUTINE_UNIFORM,
+	Uniform                            = UNIFORM,
+	Program_Input                      = PROGRAM_INPUT,
+	Program_Output                     = PROGRAM_OUTPUT,
+	Vertex_Subroutine_Uniform          = VERTEX_SUBROUTINE_UNIFORM,
+	Tess_Control_Subroutine_Uniform    = TESS_CONTROL_SUBROUTINE_UNIFORM,
+	Tess_Evaluation_Subroutine_Uniform = TESS_EVALUATION_SUBROUTINE_UNIFORM,
+	Geometry_Subroutine_Uniform        = GEOMETRY_SUBROUTINE_UNIFORM,
+	Fragment_Subroutine_Uniform        = FRAGMENT_SUBROUTINE_UNIFORM,
+	Compute_Subroutine_Uniform         = COMPUTE_SUBROUTINE_UNIFORM,
 }
 
 /* int GetProgramResourceLocationIndex(uint program, enum programInterface, const char *name); */
 Program_Resource_Location_Index :: enum u32 {
-	PROGRAM_OUTPUT = PROGRAM_OUTPUT,
+	Program_Output = PROGRAM_OUTPUT,
 }
 
 
@@ -387,8 +387,8 @@ Active_Subroutine_Uniform_Parameter :: enum u32 {
 	// NOTE(tarik): These shouldn't exist according to Quick Reference Card
 	//              or the specification on page 156, but should exist
 	//              according to page 620 of specification.
-	Uniform_Size        = UNIFORM_SIZE,
-	Uniform_Name_Length = UNIFORM_NAME_LENGTH,
+	Uniform_Size               = UNIFORM_SIZE,
+	Uniform_Name_Length        = UNIFORM_NAME_LENGTH,
 
 }
 
