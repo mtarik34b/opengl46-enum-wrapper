@@ -6,34 +6,34 @@ package vendor_gl
 Debug_Proc_T :: #type proc "c" (source: Debug_Source, type: Debug_Type, id: u32, severity: Debug_Severity, length: i32, message: cstring, userParam: rawptr)
 
 Debug_Source :: enum u32 {
-	DEBUG_SOURCE_API             = DEBUG_SOURCE_API,
-	DEBUG_SOURCE_SHADER_COMPILER = DEBUG_SOURCE_SHADER_COMPILER,
-	DEBUG_SOURCE_WINDOW_SYSTEM   = DEBUG_SOURCE_WINDOW_SYSTEM,
-	DEBUG_SOURCE_THIRD_PARTY     = DEBUG_SOURCE_THIRD_PARTY,
-	DEBUG_SOURCE_APPLICATION     = DEBUG_SOURCE_APPLICATION,
-	DEBUG_SOURCE_OTHER           = DEBUG_SOURCE_OTHER,
-	DONT_CARE                    = DONT_CARE,
+	Debug_Source_API             = DEBUG_SOURCE_API,
+	Debug_Source_Shader_Compiler = DEBUG_SOURCE_SHADER_COMPILER,
+	Debug_Source_Window_System   = DEBUG_SOURCE_WINDOW_SYSTEM,
+	Debug_Source_Third_Party     = DEBUG_SOURCE_THIRD_PARTY,
+	Debug_Source_Application     = DEBUG_SOURCE_APPLICATION,
+	Debug_Source_Other           = DEBUG_SOURCE_OTHER,
+	Dont_Care                    = DONT_CARE,
 }
 
 Debug_Type :: enum u32 {
-	DEBUG_TYPE_ERROR               = DEBUG_TYPE_ERROR,
-	DEBUG_TYPE_DEPRECATED_BEHAVIOR = DEBUG_TYPE_DEPRECATED_BEHAVIOR,
-	DEBUG_TYPE_UNDEFINED_BEHAVIOR  = DEBUG_TYPE_UNDEFINED_BEHAVIOR,
-	DEBUG_TYPE_PERFORMANCE         = DEBUG_TYPE_PERFORMANCE,
-	DEBUG_TYPE_PORTABILITY         = DEBUG_TYPE_PORTABILITY,
-	DEBUG_TYPE_MARKER              = DEBUG_TYPE_MARKER,
-	DEBUG_TYPE_PUSH_GROUP          = DEBUG_TYPE_PUSH_GROUP,
-	DEBUG_TYPE_POP_GROUP           = DEBUG_TYPE_POP_GROUP,
-	DEBUG_TYPE_OTHER               = DEBUG_TYPE_OTHER,
-	DONT_CARE                      = DONT_CARE,
+	Debug_Type_Error               = DEBUG_TYPE_ERROR,
+	Debug_Type_Deprecated_Behavior = DEBUG_TYPE_DEPRECATED_BEHAVIOR,
+	Debug_Type_Undefined_Behavior  = DEBUG_TYPE_UNDEFINED_BEHAVIOR,
+	Debug_Type_Performance         = DEBUG_TYPE_PERFORMANCE,
+	Debug_Type_Portability         = DEBUG_TYPE_PORTABILITY,
+	Debug_Type_Marker              = DEBUG_TYPE_MARKER,
+	Debug_Type_Push_Group          = DEBUG_TYPE_PUSH_GROUP,
+	Debug_Type_Pop_Group           = DEBUG_TYPE_POP_GROUP,
+	Debug_Type_Other               = DEBUG_TYPE_OTHER,
+	Dont_Care                      = DONT_CARE,
 }
 
 Debug_Severity :: enum u32 {
-	DEBUG_SEVERITY_HIGH         = DEBUG_SEVERITY_HIGH,
-	DEBUG_SEVERITY_MEDIUM       = DEBUG_SEVERITY_MEDIUM,
-	DEBUG_SEVERITY_LOW          = DEBUG_SEVERITY_LOW,
-	DEBUG_SEVERITY_NOTIFICATION = DEBUG_SEVERITY_NOTIFICATION,
-	DONT_CARE                   = DONT_CARE,
+	Debug_Severity_High         = DEBUG_SEVERITY_HIGH,
+	Debug_Severity_Medium       = DEBUG_SEVERITY_MEDIUM,
+	Debug_Severity_Low          = DEBUG_SEVERITY_LOW,
+	Debug_Severity_Notification = DEBUG_SEVERITY_NOTIFICATION,
+	Dont_Care                   = DONT_CARE,
 }
 
 
@@ -49,27 +49,27 @@ Debug_Severity :: enum u32 {
 
 /* void DebugMessageInsert(enum source, enum type, uint id, enum severity, int length, const char *buf); */
 Debug_Insert_Source :: enum u32 {
-	DEBUG_SOURCE_APPLICATION = DEBUG_SOURCE_APPLICATION,
-	DEBUG_SOURCE_THIRD_PARTY = DEBUG_SOURCE_THIRD_PARTY,
+	Debug_Source_Application = DEBUG_SOURCE_APPLICATION,
+	Debug_Source_Third_Party = DEBUG_SOURCE_THIRD_PARTY,
 }
 
 Debug_Insert_Type :: enum u32 {
-	DEBUG_TYPE_ERROR               = DEBUG_TYPE_ERROR,
-	DEBUG_TYPE_DEPRECATED_BEHAVIOR = DEBUG_TYPE_DEPRECATED_BEHAVIOR,
-	DEBUG_TYPE_UNDEFINED_BEHAVIOR  = DEBUG_TYPE_UNDEFINED_BEHAVIOR,
-	DEBUG_TYPE_PERFORMANCE         = DEBUG_TYPE_PERFORMANCE,
-	DEBUG_TYPE_PORTABILITY         = DEBUG_TYPE_PORTABILITY,
-	DEBUG_TYPE_MARKER              = DEBUG_TYPE_MARKER,
-	DEBUG_TYPE_PUSH_GROUP          = DEBUG_TYPE_PUSH_GROUP,
-	DEBUG_TYPE_POP_GROUP           = DEBUG_TYPE_POP_GROUP,
-	DEBUG_TYPE_OTHER               = DEBUG_TYPE_OTHER,
+	Debug_Type_Error               = DEBUG_TYPE_ERROR,
+	Debug_Type_Deprecated_Behavior = DEBUG_TYPE_DEPRECATED_BEHAVIOR,
+	Debug_Type_Undefined_Behavior  = DEBUG_TYPE_UNDEFINED_BEHAVIOR,
+	Debug_Type_Performance         = DEBUG_TYPE_PERFORMANCE,
+	Debug_Type_Portability         = DEBUG_TYPE_PORTABILITY,
+	Debug_Type_Marker              = DEBUG_TYPE_MARKER,
+	Debug_Type_Push_Group          = DEBUG_TYPE_PUSH_GROUP,
+	Debug_Type_Pop_Group           = DEBUG_TYPE_POP_GROUP,
+	Debug_Type_Other               = DEBUG_TYPE_OTHER,
 }
 
 Debug_Insert_Severity :: enum u32 {
-	DEBUG_SEVERITY_HIGH         = DEBUG_SEVERITY_HIGH,
-	DEBUG_SEVERITY_MEDIUM       = DEBUG_SEVERITY_MEDIUM,
-	DEBUG_SEVERITY_LOW          = DEBUG_SEVERITY_LOW,
-	DEBUG_SEVERITY_NOTIFICATION = DEBUG_SEVERITY_NOTIFICATION,
+	Debug_Severity_High         = DEBUG_SEVERITY_HIGH,
+	Debug_Severity_Medium       = DEBUG_SEVERITY_MEDIUM,
+	Debug_Severity_Low          = DEBUG_SEVERITY_LOW,
+	Debug_Severity_Notification = DEBUG_SEVERITY_NOTIFICATION,
 }
 
 
@@ -82,17 +82,17 @@ Push_Debug_Group_Source :: Debug_Insert_Source
 
 /* void ObjectLabel(enum identifier, uint name, sizei length, const char *label); */
 Object_Label_Identifier :: enum u32 {
-	BUFFER             = BUFFER,
-	FRAMEBUFFER        = FRAMEBUFFER,
-	PROGRAM_PIPELINE   = PROGRAM_PIPELINE,
-	PROGRAM            = PROGRAM,
-	QUERY              = QUERY,
-	RENDERBUFFER       = RENDERBUFFER,
-	SAMPLER            = SAMPLER,
-	SHADER             = SHADER,
-	TEXTURE            = TEXTURE,
-	TRANSFORM_FEEDBACK = TRANSFORM_FEEDBACK,
-	VERTEX_ARRAY       = VERTEX_ARRAY,
+	Buffer             = BUFFER,
+	Framebuffer        = FRAMEBUFFER,
+	Program_Pipeline   = PROGRAM_PIPELINE,
+	Program            = PROGRAM,
+	Query              = QUERY,
+	Renderbuffer       = RENDERBUFFER,
+	Sampler            = SAMPLER,
+	Shader             = SHADER,
+	Texture            = TEXTURE,
+	Transform_Feedback = TRANSFORM_FEEDBACK,
+	Vertex_Array       = VERTEX_ARRAY,
 }
 
 

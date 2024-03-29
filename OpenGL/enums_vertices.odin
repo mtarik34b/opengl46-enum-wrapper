@@ -4,7 +4,7 @@ package vendor_gl
 
 /* void PatchParameteri(enum pname, int value); */
 Patch_Parameteri :: enum u32 {
-	PATCH_VERTICES = PATCH_VERTICES,
+	Patch_Vertices = PATCH_VERTICES,
 }
 
 
@@ -12,9 +12,9 @@ Patch_Parameteri :: enum u32 {
 
 /* void VertexAttribP1ui(uint index, enum type, boolean normalized, uint value); */
 Vertex_AttribP123_Type :: enum u32 {
-	INT_2_10_10_10_REV           = INT_2_10_10_10_REV,
-	UNSIGNED_INT_2_10_10_10_REV  = UNSIGNED_INT_2_10_10_10_REV,
-	UNSIGNED_INT_10F_11F_11F_REV = UNSIGNED_INT_10F_11F_11F_REV,
+	Int_2_10_10_10_Rev           = INT_2_10_10_10_REV,
+	Unsigned_Int_2_10_10_10_Rev  = UNSIGNED_INT_2_10_10_10_REV,
+	Unsigned_Int_10f_11f_11f_Rev = UNSIGNED_INT_10F_11F_11F_REV,
 }
 /* void VertexAttribP2ui(uint index, enum type, boolean normalized, uint value); */
 // type: Vertex_AttribP123_Type
@@ -24,8 +24,8 @@ Vertex_AttribP123_Type :: enum u32 {
 
 /* void VertexAttribP4ui(uint index, enum type, boolean normalized, uint value); */
 Vertex_AttribP4_Type :: enum u32 {
-	INT_2_10_10_10_REV           = INT_2_10_10_10_REV,
-	UNSIGNED_INT_2_10_10_10_REV  = UNSIGNED_INT_2_10_10_10_REV,
+	Int_2_10_10_10_Rev           = INT_2_10_10_10_REV,
+	Unsigned_Int_2_10_10_10_Rev  = UNSIGNED_INT_2_10_10_10_REV,
 }
 
 // void VertexAttribP1uiv(uint index, enum type, boolean normalized, const uint *value);

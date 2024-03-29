@@ -7,34 +7,34 @@ package vendor_gl
 
 /* void StencilFunc(enum func, int ref, uint mask); */
 Comparison_Func :: enum u32 {
-	NEVER    = NEVER,
-	ALWAYS   = ALWAYS,
-	LESS     = LESS,
-	LEQUAL   = LEQUAL,
-	EQUAL    = EQUAL,
-	GEQUAL   = GEQUAL,
-	GREATER  = GREATER,
-	NOTEQUAL = NOTEQUAL,
+	Never     = NEVER,
+	Always    = ALWAYS,
+	Less      = LESS,
+	Lequal    = LEQUAL,
+	Equal     = EQUAL,
+	Gequal    = GEQUAL,
+	Greater   = GREATER,
+	Not_Equal = NOTEQUAL,
 }
 
 /* void StencilFuncSeparate(enum face, enum func, int ref, uint mask); */
 // func: Comparison_Func
 Stencil_Face :: enum u32 {
-	FRONT          = FRONT,
-	BACK           = BACK,
-	FRONT_AND_BACK = FRONT_AND_BACK,
+	Front          = FRONT,
+	Back           = BACK,
+	Front_And_Back = FRONT_AND_BACK,
 }
 
 /* void StencilOp(enum sfail, enum dpfail, enum dppass); */
 Stencil_Operation :: enum u32 {
-	KEEP      = KEEP,
-	ZERO      = ZERO,
-	REPLACE   = REPLACE,
-	INCR      = INCR,
-	DECR      = DECR,
+	Keep      = KEEP,
+	Zero      = ZERO,
+	Replace   = REPLACE,
+	Incr      = INCR,
+	Decr      = DECR,
 	INVERT    = INVERT,
-	INCR_WRAP = INCR_WRAP,
-	DECR_WRAP = DECR_WRAP,
+	Incr_Wrap = INCR_WRAP,
+	Decr_Wrap = DECR_WRAP,
 }
 
 /* void StencilOpSeparate(enum face, enum sfail, enum dpfail, enum dppass); */
@@ -54,11 +54,11 @@ Stencil_Operation :: enum u32 {
 
 /* void BlendEquation(enum mode); */
 Blend_Mode :: enum u32 {
-	FUNC_ADD              = FUNC_ADD,
-	FUNC_SUBTRACT         = FUNC_SUBTRACT,
-	FUNC_REVERSE_SUBTRACT = FUNC_REVERSE_SUBTRACT,
-	MIN                   = MIN,
-	MAX                   = MAX,
+	Func_Add              = FUNC_ADD,
+	Func_Subtract         = FUNC_SUBTRACT,
+	Func_Reverse_Subtract = FUNC_REVERSE_SUBTRACT,
+	Min                   = MIN,
+	Max                   = MAX,
 }
 
 /* void BlendEquationSeparate(enum modeRGB, enum modeAlpha); */
@@ -76,25 +76,25 @@ Blend_Mode :: enum u32 {
 // src: Blend_Function
 // dst: Blend_Function
 Blend_Function :: enum u32 {
-	ZERO                     = ZERO,
-	ONE                      = ONE,
-	SRC_COLOR                = SRC_COLOR,
-	ONE_MINUS_SRC_COLOR      = ONE_MINUS_SRC_COLOR,
-	DST_COLOR                = DST_COLOR,
-	ONE_MINUS_DST_COLOR      = ONE_MINUS_DST_COLOR,
-	SRC_ALPHA                = SRC_ALPHA,
-	ONE_MINUS_SRC_ALPHA      = ONE_MINUS_SRC_ALPHA,
-	DST_ALPHA                = DST_ALPHA,
-	ONE_MINUS_DST_ALPHA      = ONE_MINUS_DST_ALPHA,
-	CONSTANT_COLOR           = CONSTANT_COLOR,
-	ONE_MINUS_CONSTANT_COLOR = ONE_MINUS_CONSTANT_COLOR,
-	CONSTANT_ALPHA           = CONSTANT_ALPHA,
-	ONE_MINUS_CONSTANT_ALPHA = ONE_MINUS_CONSTANT_ALPHA,
-	SRC_ALPHA_SATURATE       = SRC_ALPHA_SATURATE,
-	SRC1_COLOR               = SRC1_COLOR,
-	ONE_MINUS_SRC1_COLOR     = ONE_MINUS_SRC1_COLOR,
-	SRC1_ALPHA               = SRC1_ALPHA,
-	ONE_MINUS_SRC1_ALPHA     = ONE_MINUS_SRC1_ALPHA,
+	Zero                     = ZERO,
+	One                      = ONE,
+	Src_Color                = SRC_COLOR,
+	One_Minus_Src_Color      = ONE_MINUS_SRC_COLOR,
+	Dst_Color                = DST_COLOR,
+	One_Minus_Dst_Color      = ONE_MINUS_DST_COLOR,
+	Src_Alpha                = SRC_ALPHA,
+	One_Minus_Src_Alpha      = ONE_MINUS_SRC_ALPHA,
+	Dst_Alpha                = DST_ALPHA,
+	One_Minus_Dst_Alpha      = ONE_MINUS_DST_ALPHA,
+	Constant_Color           = CONSTANT_COLOR,
+	One_Minus_Constant_Color = ONE_MINUS_CONSTANT_COLOR,
+	Constant_Alpha           = CONSTANT_ALPHA,
+	One_Minus_Constant_Alpha = ONE_MINUS_CONSTANT_ALPHA,
+	Src_Alpha_Saturate       = SRC_ALPHA_SATURATE,
+	Src1_Color               = SRC1_COLOR,
+	One_Minus_Src1_Color     = ONE_MINUS_SRC1_COLOR,
+	Src1_Alpha               = SRC1_ALPHA,
+	One_Minus_Src1_Alpha     = ONE_MINUS_SRC1_ALPHA,
 }
 
 /* void BlendFuncSeparate(enum srcRGB, enum dstRGB, enum srcAlpha, enum dstAlpha); */
@@ -118,20 +118,20 @@ Blend_Function :: enum u32 {
 
 /* void LogicOp(enum op); */
 Logical_Operation :: enum u32 {
-	CLEAR         = CLEAR,
-	SET           = SET,
-	COPY          = COPY,
-	COPY_INVERTED = COPY_INVERTED,
-	NOOP          = NOOP,
-	INVERT        = INVERT,
-	AND           = AND,
-	NAND          = NAND,
-	OR            = OR,
-	NOR           = NOR,
-	XOR           = XOR,
-	EQUIV         = EQUIV,
-	AND_REVERSE   = AND_REVERSE,
-	AND_INVERTED  = AND_INVERTED,
-	OR_REVERSE    = OR_REVERSE,
-	OR_INVERTED   = OR_INVERTED,
+	Clear         = CLEAR,
+	Set           = SET,
+	Copy          = COPY,
+	Copy_Inverted = COPY_INVERTED,
+	Noop          = NOOP,
+	Invert        = INVERT,
+	And           = AND,
+	Nand          = NAND,
+	Or            = OR,
+	Nor           = NOR,
+	Xor           = XOR,
+	Equiv         = EQUIV,
+	And_Reverse   = AND_REVERSE,
+	And_Inverted  = AND_INVERTED,
+	Or_Reverse    = OR_REVERSE,
+	Or_Inverted   = OR_INVERTED,
 }

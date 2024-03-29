@@ -2,14 +2,14 @@ package vendor_gl
 
 /* void Hint(enum target, enum hint); */
 Hint_Target :: enum u32 {
-	LINE_SMOOTH_HINT                = LINE_SMOOTH_HINT,
-	POLYGON_SMOOTH_HINT             = POLYGON_SMOOTH_HINT,
-	TEXTURE_COMPRESSION_HINT        = TEXTURE_COMPRESSION_HINT,
-	FRAGMENT_SHADER_DERIVATIVE_HINT = FRAGMENT_SHADER_DERIVATIVE_HINT,
+	Line_Smooth_Hint                = LINE_SMOOTH_HINT,
+	Polygon_Smooth_Hint             = POLYGON_SMOOTH_HINT,
+	Texture_Compression_Hint        = TEXTURE_COMPRESSION_HINT,
+	Fragment_Shader_Derivative_Hint = FRAGMENT_SHADER_DERIVATIVE_HINT,
 }
 
 Hint_Mode :: enum u32 {
-	FASTEST   = FASTEST,
-	NICEST    = NICEST,
-	DONT_CARE = DONT_CARE,
+	Fastest   = FASTEST,
+	Nicest    = NICEST,
+	Dont_Care = DONT_CARE,
 }

@@ -4,14 +4,14 @@ package vendor_gl
 
 /* void BindTransformFeedback(enum target, uint id); */
 Transform_Feedback_Target :: enum u32 {
-	TRANSFORM_FEEDBACK = TRANSFORM_FEEDBACK,
+	Transform_Feedback = TRANSFORM_FEEDBACK,
 }
 
 /* void BeginTransformFeedback(enum primitiveMode); */
 Transform_Feedback_Primitive_Mode :: enum u32 {
-	TRIANGLES = TRIANGLES,
-	LINES     = LINES,
-	POINTS    = POINTS,
+	Triangles = TRIANGLES,
+	Lines     = LINES,
+	Points    = POINTS,
 }
 
 
@@ -34,8 +34,8 @@ Transform_Feedback_Primitive_Mode :: enum u32 {
 
 /* void ProvokingVertex(enum provokeMode); */
 Provoking_Vertex_Mode :: enum u32 {
-	FIRST_VERTEX_CONVENTION = FIRST_VERTEX_CONVENTION,
-	LAST_VERTEX_CONVENTION  = LAST_VERTEX_CONVENTION,
+	First_Vertex_Convention = FIRST_VERTEX_CONVENTION,
+	Last_Vertex_Convention  = LAST_VERTEX_CONVENTION,
 }
 
 
@@ -43,11 +43,11 @@ Provoking_Vertex_Mode :: enum u32 {
 
 /* void ClipControl(enum origin, enum depth); */
 Clip_Control_Origin :: enum u32 {
-	LOWER_LEFT = LOWER_LEFT,
-	UPPER_LEFT = UPPER_LEFT,
+	Lower_Left = LOWER_LEFT,
+	Upper_Left = UPPER_LEFT,
 }
 
 Clip_Control_Depth :: enum u32 {
-	NEGATIVE_ONE_TO_ONE = NEGATIVE_ONE_TO_ONE,
-	ZERO_TO_ONE         = ZERO_TO_ONE,
+	Negative_One_To_One = NEGATIVE_ONE_TO_ONE,
+	Zero_To_One         = ZERO_TO_ONE,
 }

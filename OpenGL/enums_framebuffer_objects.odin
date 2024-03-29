@@ -173,41 +173,41 @@ Renderbuffer_Parameter :: enum u32 {
 
 // TODO(tarik): Find better name
 Framebuffer_Renderbuffer_Attachment :: enum u32 {
-	DEPTH_ATTACHMENT         = DEPTH_ATTACHMENT,
-	STENCIL_ATTACHMENT       = STENCIL_ATTACHMENT,
-	DEPTH_STENCIL_ATTACHMENT = DEPTH_STENCIL_ATTACHMENT,
-	COLOR_ATTACHMENT0        = COLOR_ATTACHMENT0,
-	COLOR_ATTACHMENT1        = COLOR_ATTACHMENT1,
-	COLOR_ATTACHMENT2        = COLOR_ATTACHMENT2,
-	COLOR_ATTACHMENT3        = COLOR_ATTACHMENT3,
-	COLOR_ATTACHMENT4        = COLOR_ATTACHMENT4,
-	COLOR_ATTACHMENT5        = COLOR_ATTACHMENT5,
-	COLOR_ATTACHMENT6        = COLOR_ATTACHMENT6,
-	COLOR_ATTACHMENT7        = COLOR_ATTACHMENT7,
-	COLOR_ATTACHMENT8        = COLOR_ATTACHMENT8,
-	COLOR_ATTACHMENT9        = COLOR_ATTACHMENT9,
-	COLOR_ATTACHMENT10       = COLOR_ATTACHMENT10,
-	COLOR_ATTACHMENT11       = COLOR_ATTACHMENT11,
-	COLOR_ATTACHMENT12       = COLOR_ATTACHMENT12,
-	COLOR_ATTACHMENT13       = COLOR_ATTACHMENT13,
-	COLOR_ATTACHMENT14       = COLOR_ATTACHMENT14,
-	COLOR_ATTACHMENT15       = COLOR_ATTACHMENT15,
-	COLOR_ATTACHMENT16       = COLOR_ATTACHMENT16,
-	COLOR_ATTACHMENT17       = COLOR_ATTACHMENT17,
-	COLOR_ATTACHMENT18       = COLOR_ATTACHMENT18,
-	COLOR_ATTACHMENT19       = COLOR_ATTACHMENT19,
-	COLOR_ATTACHMENT20       = COLOR_ATTACHMENT20,
-	COLOR_ATTACHMENT21       = COLOR_ATTACHMENT21,
-	COLOR_ATTACHMENT22       = COLOR_ATTACHMENT22,
-	COLOR_ATTACHMENT23       = COLOR_ATTACHMENT23,
-	COLOR_ATTACHMENT24       = COLOR_ATTACHMENT24,
-	COLOR_ATTACHMENT25       = COLOR_ATTACHMENT25,
-	COLOR_ATTACHMENT26       = COLOR_ATTACHMENT26,
-	COLOR_ATTACHMENT27       = COLOR_ATTACHMENT27,
-	COLOR_ATTACHMENT28       = COLOR_ATTACHMENT28,
-	COLOR_ATTACHMENT29       = COLOR_ATTACHMENT29,
-	COLOR_ATTACHMENT30       = COLOR_ATTACHMENT30,
-	COLOR_ATTACHMENT31       = COLOR_ATTACHMENT31,
+	Depth_Attachment         = DEPTH_ATTACHMENT,
+	Stencil_Attachment       = STENCIL_ATTACHMENT,
+	Depth_Stencil_Attachment = DEPTH_STENCIL_ATTACHMENT,
+	Color_Attachment0        = COLOR_ATTACHMENT0,
+	Color_Attachment1        = COLOR_ATTACHMENT1,
+	Color_Attachment2        = COLOR_ATTACHMENT2,
+	Color_Attachment3        = COLOR_ATTACHMENT3,
+	Color_Attachment4        = COLOR_ATTACHMENT4,
+	Color_Attachment5        = COLOR_ATTACHMENT5,
+	Color_Attachment6        = COLOR_ATTACHMENT6,
+	Color_Attachment7        = COLOR_ATTACHMENT7,
+	Color_Attachment8        = COLOR_ATTACHMENT8,
+	Color_Attachment9        = COLOR_ATTACHMENT9,
+	Color_Attachment10       = COLOR_ATTACHMENT10,
+	Color_Attachment11       = COLOR_ATTACHMENT11,
+	Color_Attachment12       = COLOR_ATTACHMENT12,
+	Color_Attachment13       = COLOR_ATTACHMENT13,
+	Color_Attachment14       = COLOR_ATTACHMENT14,
+	Color_Attachment15       = COLOR_ATTACHMENT15,
+	Color_Attachment16       = COLOR_ATTACHMENT16,
+	Color_Attachment17       = COLOR_ATTACHMENT17,
+	Color_Attachment18       = COLOR_ATTACHMENT18,
+	Color_Attachment19       = COLOR_ATTACHMENT19,
+	Color_Attachment20       = COLOR_ATTACHMENT20,
+	Color_Attachment21       = COLOR_ATTACHMENT21,
+	Color_Attachment22       = COLOR_ATTACHMENT22,
+	Color_Attachment23       = COLOR_ATTACHMENT23,
+	Color_Attachment24       = COLOR_ATTACHMENT24,
+	Color_Attachment25       = COLOR_ATTACHMENT25,
+	Color_Attachment26       = COLOR_ATTACHMENT26,
+	Color_Attachment27       = COLOR_ATTACHMENT27,
+	Color_Attachment28       = COLOR_ATTACHMENT28,
+	Color_Attachment29       = COLOR_ATTACHMENT29,
+	Color_Attachment30       = COLOR_ATTACHMENT30,
+	Color_Attachment31       = COLOR_ATTACHMENT31,
 }
 
 /* void NamedFramebufferRenderbuffer(uint framebuffer, enum attachment, enum renderbuffertarget, uint renderbuffer); */
@@ -229,7 +229,7 @@ Framebuffer_Renderbuffer_Attachment :: enum u32 {
 // attachment: Framebuffer_Renderbuffer_Attachment
 
 Framebuffer_Texture_1D_Target :: enum u32 {
-	TEXTURE_1D = TEXTURE_1D,
+	Texture_1D = TEXTURE_1D,
 }
 
 /* void FramebufferTexture2D(enum target, enum attachment, enum textarget, uint texture, int level); */
@@ -237,15 +237,15 @@ Framebuffer_Texture_1D_Target :: enum u32 {
 // attachment: Framebuffer_Renderbuffer_Attachment
 
 Framebuffer_Texture_2D_Target :: enum u32 {
-	TEXTURE_2D                  = TEXTURE_2D,
-	TEXTURE_2D_MULTISAMPLE      = TEXTURE_2D_MULTISAMPLE,
-	TEXTURE_RECTANGLE           = TEXTURE_RECTANGLE,
-	TEXTURE_CUBE_MAP_POSITIVE_X = TEXTURE_CUBE_MAP_POSITIVE_X,
-	TEXTURE_CUBE_MAP_POSITIVE_Y = TEXTURE_CUBE_MAP_POSITIVE_Y,
-	TEXTURE_CUBE_MAP_POSITIVE_Z = TEXTURE_CUBE_MAP_POSITIVE_Z,
-	TEXTURE_CUBE_MAP_NEGATIVE_X = TEXTURE_CUBE_MAP_NEGATIVE_X,
-	TEXTURE_CUBE_MAP_NEGATIVE_Y = TEXTURE_CUBE_MAP_NEGATIVE_Y,
-	TEXTURE_CUBE_MAP_NEGATIVE_Z = TEXTURE_CUBE_MAP_NEGATIVE_Z,
+	Texture_2D                  = TEXTURE_2D,
+	Texture_2D_Multisample      = TEXTURE_2D_MULTISAMPLE,
+	Texture_Rectangle           = TEXTURE_RECTANGLE,
+	Texture_Cube_Map_Positive_X = TEXTURE_CUBE_MAP_POSITIVE_X,
+	Texture_Cube_Map_Positive_Y = TEXTURE_CUBE_MAP_POSITIVE_Y,
+	Texture_Cube_Map_Positive_Z = TEXTURE_CUBE_MAP_POSITIVE_Z,
+	Texture_Cube_Map_Negative_X = TEXTURE_CUBE_MAP_NEGATIVE_X,
+	Texture_Cube_Map_Negative_Y = TEXTURE_CUBE_MAP_NEGATIVE_Y,
+	Texture_Cube_Map_Negative_Z = TEXTURE_CUBE_MAP_NEGATIVE_Z,
 }
 
 /* void FramebufferTexture3D(enum target, enum attachment, enum textarget, uint texture, int level, int layer); */
@@ -253,7 +253,7 @@ Framebuffer_Texture_2D_Target :: enum u32 {
 // attachment: Framebuffer_Renderbuffer_Attachment
 
 Framebuffer_Texture_3D_Target :: enum u32 {
-	TEXTURE_3D = TEXTURE_3D,
+	Texture_3D = TEXTURE_3D,
 }
 
 /* void FramebufferTextureLayer(enum target, enum attachment, uint texture, int level, int layer); */
@@ -270,13 +270,13 @@ Framebuffer_Texture_3D_Target :: enum u32 {
 // target: Framebuffer_Target
 
 Framebuffer_Status :: enum u32 {
-	FRAMEBUFFER_COMPLETE = FRAMEBUFFER_COMPLETE,
-	FRAMEBUFFER_UNDEFINED,
-	FRAMEBUFFER_INCOMPLETE_ATTACHMENT,
-	FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT,
-	FRAMEBUFFER_UNSUPPORTED,
-	FRAMEBUFFER_INCOMPLETE_MULTISAMPLE,
-	FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS,
+	Framebuffer_Complete                      = FRAMEBUFFER_COMPLETE,
+	Framebuffer_Undefined                     = FRAMEBUFFER_UNDEFINED,
+	Framebuffer_Incomplete_Attachment         = FRAMEBUFFER_INCOMPLETE_ATTACHMENT,
+	Framebuffer_Incomplete_Missing_Attachment = FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT,
+	Framebuffer_Unsupported                   = FRAMEBUFFER_UNSUPPORTED,
+	Framebuffer_Incomplete_Multisample        = FRAMEBUFFER_INCOMPLETE_MULTISAMPLE,
+	Framebuffer_Incomplete_Layer_Targets      = FRAMEBUFFER_INCOMPLETE_LAYER_TARGETS,
 }
 
 /* enum CheckNamedFramebufferStatus(uint framebuffer, enum target); */

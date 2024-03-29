@@ -21,13 +21,13 @@ package vendor_gl
 
 /* void ClampColor(enum target, enum clamp); */
 Clamp_Color_Target :: enum u32 {
-	CLAMP_READ_COLOR = CLAMP_READ_COLOR,
+	Clamp_Read_Color = CLAMP_READ_COLOR,
 }
 
 Color_Clamping :: enum u32 {
-	TRUE       = 1,
-	FALSE      = 0,
-	FIXED_ONLY = FIXED_ONLY,
+	True       = 1,
+	False      = 0,
+	Fixed_Only = FIXED_ONLY,
 }
 
 
@@ -36,8 +36,8 @@ Color_Clamping :: enum u32 {
 /* void BlitFramebuffer(int srcX0, int srcY0, int srcX1, int srcY1, int dstX0, int dstY0, int dstX1, int dstY1, bitfield mask, enum filter); */
 // mask: Clear_Bits
 Blit_Framebuffer_Filter :: enum u32 {
-	LINEAR  = LINEAR,
-	NEAREST = NEAREST,
+	Linear  = LINEAR,
+	Nearest = NEAREST,
 }
 
 /* void BlitNamedFramebuffer(uint readFramebuffer, uint drawFramebuffer, int srcX0, int srcY0, int srcX1, int srcY1, int dstX0, int dstY0, int dstX1, int dstY1, bitfield mask, enum filter); */
@@ -46,16 +46,16 @@ Blit_Framebuffer_Filter :: enum u32 {
 
 /* void CopyImageSubData(uint srcName, enum srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, enum dstTarget, int dstLevel, int dstX, int dstY, int dstZ, sizei srcWidth, sizei srcHeight, sizei srcDepth); */
 Copy_Image_Sub_Data_Target :: enum u32 {
-	RENDERBUFFER                 = RENDERBUFFER,
+	Renderbuffer                 = RENDERBUFFER,
 
-	TEXTURE_1D                   = TEXTURE_1D,
-	TEXTURE_2D                   = TEXTURE_2D,
-	TEXTURE_3D                   = TEXTURE_3D,
-	TEXTURE_1D_ARRAY             = TEXTURE_1D_ARRAY,
-	TEXTURE_2D_ARRAY             = TEXTURE_2D_ARRAY,
-	TEXTURE_RECTANGLE            = TEXTURE_RECTANGLE,
-	TEXTURE_CUBE_MAP             = TEXTURE_CUBE_MAP,
-	TEXTURE_CUBE_MAP_ARRAY       = TEXTURE_CUBE_MAP_ARRAY,
-	TEXTURE_2D_MULTISAMPLE       = TEXTURE_2D_MULTISAMPLE,
-	TEXTURE_2D_MULTISAMPLE_ARRAY = TEXTURE_2D_MULTISAMPLE_ARRAY,
+	Texture_1D                   = TEXTURE_1D,
+	Texture_2D                   = TEXTURE_2D,
+	Texture_3D                   = TEXTURE_3D,
+	Texture_1D_Array             = TEXTURE_1D_ARRAY,
+	Texture_2D_Array             = TEXTURE_2D_ARRAY,
+	Texture_Rectangle            = TEXTURE_RECTANGLE,
+	Texture_Cube_Map             = TEXTURE_CUBE_MAP,
+	Texture_Cube_Map_Array       = TEXTURE_CUBE_MAP_ARRAY,
+	Texture_2D_Multisample       = TEXTURE_2D_MULTISAMPLE,
+	Texture_2D_Multisample_Array = TEXTURE_2D_MULTISAMPLE_ARRAY,
 }

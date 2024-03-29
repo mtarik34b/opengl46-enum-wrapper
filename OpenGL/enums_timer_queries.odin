@@ -1,5 +1,5 @@
 package vendor_gl
 
 Query_Counter_Target :: enum u32 {
-	TIMESTAMP = TIMESTAMP,
+	Timestamp = TIMESTAMP,
 }

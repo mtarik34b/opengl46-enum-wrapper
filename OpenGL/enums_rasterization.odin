@@ -4,7 +4,7 @@ package vendor_gl
 
 /* void GetMultisamplefv(enum pname, uint index, float *val); */
 Multisample_Parameter :: enum u32 {
-	SAMPLE_POSITION = SAMPLE_POSITION,
+	Sample_Position = SAMPLE_POSITION,
 }
 
 
@@ -12,8 +12,8 @@ Multisample_Parameter :: enum u32 {
 
 /* void PointParameteri(enum pname, T param); */
 Point_Parameter :: enum u32 {
-	POINT_FADE_THRESHOLD_SIZE = POINT_FADE_THRESHOLD_SIZE,
-	POINT_SPRITE_COORD_ORIGIN = POINT_SPRITE_COORD_ORIGIN,
+	Point_Fade_Threshold_Size = POINT_FADE_THRESHOLD_SIZE,
+	Point_Sprite_Coord_Origin = POINT_SPRITE_COORD_ORIGIN,
 }
 
 /* void PointParameterf(enum pname, T param); */
@@ -36,9 +36,9 @@ Front_Face_Direction :: enum u32 {
 
 /* void CullFace(enum mode); */
 Cull_Face_Mode :: enum u32 {
-	FRONT          = FRONT,
-	BACK           = BACK,
-	FRONT_AND_BACK = FRONT_AND_BACK,
+	Front          = FRONT,
+	Back           = BACK,
+	Front_And_Back = FRONT_AND_BACK,
 }
 
 
@@ -46,11 +46,11 @@ Cull_Face_Mode :: enum u32 {
 
 /* void PolygonMode(enum face, enum mode); */
 Polygon_Mode_Face :: enum u32 {
-	FRONT_AND_BACK = FRONT_AND_BACK,
+	Front_And_Back = FRONT_AND_BACK,
 }
 
 Polygon_Mode :: enum u32 {
-	POINT = POINT,
-	LINE  = LINE,
-	FILL  = FILL,
+	Point = POINT,
+	Line  = LINE,
+	Fill  = FILL,
 }

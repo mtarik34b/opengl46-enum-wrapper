@@ -4,29 +4,29 @@ package vendor_gl
 
 /* void BindBuffer(enum target, uint buffer); */
 Buffer_Binding_Target :: enum u32 {
-	ARRAY_BUFFER              = ARRAY_BUFFER,
-	UNIFORM_BUFFER            = UNIFORM_BUFFER,
-	ATOMIC_COUNTER_BUFFER     = ATOMIC_COUNTER_BUFFER,
-	QUERY_BUFFER              = QUERY_BUFFER,
-	COPY_READ_BUFFER          = COPY_READ_BUFFER,
-	COPY_WRITE_BUFFER         = COPY_WRITE_BUFFER,
-	DISPATCH_INDIRECT_BUFFER  = DISPATCH_INDIRECT_BUFFER,
-	DRAW_INDIRECT_BUFFER      = DRAW_INDIRECT_BUFFER,
-	ELEMENT_ARRAY_BUFFER      = ELEMENT_ARRAY_BUFFER,
-	TEXTURE_BUFFER            = TEXTURE_BUFFER,
-	PIXEL_PACK_BUFFER         = PIXEL_PACK_BUFFER,
-	PIXEL_UNPACK_BUFFER       = PIXEL_UNPACK_BUFFER,
-	PARAMETER_BUFFER          = PARAMETER_BUFFER,
-	SHADER_STORAGE_BUFFER     = SHADER_STORAGE_BUFFER,
-	TRANSFORM_FEEDBACK_BUFFER = TRANSFORM_FEEDBACK_BUFFER,
+	Array_Buffer              = ARRAY_BUFFER,
+	Uniform_Buffer            = UNIFORM_BUFFER,
+	Atomic_Counter_Buffer     = ATOMIC_COUNTER_BUFFER,
+	Query_Buffer              = QUERY_BUFFER,
+	Copy_Read_Buffer          = COPY_READ_BUFFER,
+	Copy_Write_Buffer         = COPY_WRITE_BUFFER,
+	Dispatch_Indirect_Buffer  = DISPATCH_INDIRECT_BUFFER,
+	Draw_Indirect_Buffer      = DRAW_INDIRECT_BUFFER,
+	Element_Array_Buffer      = ELEMENT_ARRAY_BUFFER,
+	Texture_Buffer            = TEXTURE_BUFFER,
+	Pixel_Pack_Buffer         = PIXEL_PACK_BUFFER,
+	Pixel_Unpack_Buffer       = PIXEL_UNPACK_BUFFER,
+	Parameter_Buffer          = PARAMETER_BUFFER,
+	Shader_Storage_Buffer     = SHADER_STORAGE_BUFFER,
+	Transform_Feedback_Buffer = TRANSFORM_FEEDBACK_BUFFER,
 }
 
 /* void BindBufferRange(enum target, uint index, uint buffer, intptr offset, sizeiptr size); */
 Buffer_Binding_Indexed_Target :: enum u32 {
-	ATOMIC_COUNTER_BUFFER     = ATOMIC_COUNTER_BUFFER,
-	SHADER_STORAGE_BUFFER     = SHADER_STORAGE_BUFFER,
-	UNIFORM_BUFFER            = UNIFORM_BUFFER,
-	TRANSFORM_FEEDBACK_BUFFER = TRANSFORM_FEEDBACK_BUFFER,
+	Atomic_Counter_Buffer     = ATOMIC_COUNTER_BUFFER,
+	Shader_Storage_Buffer     = SHADER_STORAGE_BUFFER,
+	Uniform_Buffer            = UNIFORM_BUFFER,
+	Transform_Feedback_Buffer = TRANSFORM_FEEDBACK_BUFFER,
 }
 
 /* void BindBufferBase(enum target, uint index, uint buffer); */
@@ -45,12 +45,12 @@ Buffer_Binding_Indexed_Target :: enum u32 {
 // target: Buffer_Binding_Target
 
 Buffer_Storage_Bits :: enum u32 {
-	MAP_READ_BIT        = MAP_READ_BIT,
-	MAP_WRITE_BIT       = MAP_WRITE_BIT,
-	DYNAMIC_STORAGE_BIT = DYNAMIC_STORAGE_BIT,
-	CLIENT_STORAGE_BIT  = CLIENT_STORAGE_BIT,
-	MAP_COHERENT_BIT    = MAP_COHERENT_BIT,
-	MAP_PERSISTENT_BIT  = MAP_PERSISTENT_BIT,
+	Map_Read_Bit        = MAP_READ_BIT,
+	Map_Write_Bit       = MAP_WRITE_BIT,
+	Dynamic_Storage_Bit = DYNAMIC_STORAGE_BIT,
+	Client_Storage_Bit  = CLIENT_STORAGE_BIT,
+	Map_Coherent_Bit    = MAP_COHERENT_BIT,
+	Map_Persistent_Bit  = MAP_PERSISTENT_BIT,
 }
 
 /* void NamedBufferStorage(uint buffer, sizeiptr size, const void *data, bitfield flags); */
@@ -60,15 +60,15 @@ Buffer_Storage_Bits :: enum u32 {
 // target: Buffer_Binding_Target
 
 Buffer_Data_Usage :: enum u32 {
-	DYNAMIC_DRAW = DYNAMIC_DRAW,
-	DYNAMIC_READ = DYNAMIC_READ,
-	DYNAMIC_COPY = DYNAMIC_COPY,
-	STATIC_DRAW  = STATIC_DRAW,
-	STATIC_READ  = STATIC_READ,
-	STATIC_COPY  = STATIC_COPY,
-	STREAM_DRAW  = STREAM_DRAW,
-	STREAM_READ  = STREAM_READ,
-	STREAM_COPY  = STREAM_COPY,
+	Dynamic_Draw = DYNAMIC_DRAW,
+	Dynamic_Read = DYNAMIC_READ,
+	Dynamic_Copy = DYNAMIC_COPY,
+	Static_Draw  = STATIC_DRAW,
+	Static_Read  = STATIC_READ,
+	Static_Copy  = STATIC_COPY,
+	Stream_Draw  = STREAM_DRAW,
+	Stream_Read  = STREAM_READ,
+	Stream_Copy  = STREAM_COPY,
 }
 
 /* void NamedBufferData(uint buffer, sizeiptr size, const void *data, enum usage); */
@@ -117,53 +117,53 @@ Buffer_Internalformat :: enum u32 {
 }
 
 Buffer_Format :: enum u32 {
-	RED             = RED,
-	GREEN           = GREEN,
-	BLUE            = BLUE,
+	Red             = RED,
+	Green           = GREEN,
+	Blue            = BLUE,
 	RG              = RG,
 	RGB             = RGB,
 	RGBA            = RGBA,
 	BGR             = BGR,
 	BGRA            = BGRA,
-	RED_INTEGER     = RED_INTEGER,
-	GREEN_INTEGER   = GREEN_INTEGER,
-	BLUE_INTEGER    = BLUE_INTEGER,
-	RG_INTEGER      = RG_INTEGER,
-	RGB_INTEGER     = RGB_INTEGER,
-	RGBA_INTEGER    = RGBA_INTEGER,
-	BGR_INTEGER     = BGR_INTEGER,
-	BGRA_INTEGER    = BGRA_INTEGER,
-	STENCIL_INDEX   = STENCIL_INDEX,
-	DEPTH_COMPONENT = DEPTH_COMPONENT,
-	DEPTH_STENCIL   = DEPTH_STENCIL,
+	Red_Integer     = RED_INTEGER,
+	Green_Integer   = GREEN_INTEGER,
+	Blue_Integer    = BLUE_INTEGER,
+	RG_Integer      = RG_INTEGER,
+	RGB_Integer     = RGB_INTEGER,
+	RGBA_Integer    = RGBA_INTEGER,
+	BGR_Integer     = BGR_INTEGER,
+	BGRA_Integer    = BGRA_INTEGER,
+	Stencil_Index   = STENCIL_INDEX,
+	Depth_Component = DEPTH_COMPONENT,
+	Depth_Stencil   = DEPTH_STENCIL,
 }
 
 //TODO(tarik): Duplicate of Pixel_Data_Type (other file)
 Buffer_Type :: enum u32 {
-	UNSIGNED_BYTE                  = UNSIGNED_BYTE,
-	BYTE                           = BYTE,
-	UNSIGNED_SHORT                 = UNSIGNED_SHORT,
-	SHORT                          = SHORT,
-	UNSIGNED_INT                   = UNSIGNED_INT,
-	INT                            = INT,
-	HALF_FLOAT                     = HALF_FLOAT,
-	FLOAT                          = FLOAT,
-	UNSIGNED_BYTE_3_3_2            = UNSIGNED_BYTE_3_3_2,
-	UNSIGNED_BYTE_2_3_3_REV        = UNSIGNED_BYTE_2_3_3_REV,
-	UNSIGNED_SHORT_5_6_5           = UNSIGNED_SHORT_5_6_5,
-	UNSIGNED_SHORT_5_6_5_REV       = UNSIGNED_SHORT_5_6_5_REV,
-	UNSIGNED_SHORT_4_4_4_4         = UNSIGNED_SHORT_4_4_4_4,
-	UNSIGNED_SHORT_4_4_4_4_REV     = UNSIGNED_SHORT_4_4_4_4_REV,
-	UNSIGNED_SHORT_5_5_5_1         = UNSIGNED_SHORT_5_5_5_1,
-	UNSIGNED_SHORT_1_5_5_5_REV     = UNSIGNED_SHORT_1_5_5_5_REV,
-	UNSIGNED_INT_8_8_8_8           = UNSIGNED_INT_8_8_8_8,
-	UNSIGNED_INT_8_8_8_8_REV       = UNSIGNED_INT_8_8_8_8_REV,
-	UNSIGNED_INT_10_10_10_2        = UNSIGNED_INT_10_10_10_2,
-	UNSIGNED_INT_2_10_10_10_REV    = UNSIGNED_INT_2_10_10_10_REV,
-	UNSIGNED_INT_24_8              = UNSIGNED_INT_24_8,
-	UNSIGNED_INT_10F_11F_11F_REV   = UNSIGNED_INT_10F_11F_11F_REV,
-	UNSIGNED_INT_5_9_9_9_REV       = UNSIGNED_INT_5_9_9_9_REV,
-	FLOAT_32_UNSIGNED_INT_24_8_REV = FLOAT_32_UNSIGNED_INT_24_8_REV,
+	Unsigned_Byte                  = UNSIGNED_BYTE,
+	Byte                           = BYTE,
+	Unsigned_Short                 = UNSIGNED_SHORT,
+	Short                          = SHORT,
+	Unsigned_Int                   = UNSIGNED_INT,
+	Int                            = INT,
+	Half_Float                     = HALF_FLOAT,
+	Float                          = FLOAT,
+	Unsigned_Byte_3_3_2            = UNSIGNED_BYTE_3_3_2,
+	Unsigned_Byte_2_3_3_Rev        = UNSIGNED_BYTE_2_3_3_REV,
+	Unsigned_Short_5_6_5           = UNSIGNED_SHORT_5_6_5,
+	Unsigned_Short_5_6_5_Rev       = UNSIGNED_SHORT_5_6_5_REV,
+	Unsigned_Short_4_4_4_4         = UNSIGNED_SHORT_4_4_4_4,
+	Unsigned_Short_4_4_4_4_Rev     = UNSIGNED_SHORT_4_4_4_4_REV,
+	Unsigned_Short_5_5_5_1         = UNSIGNED_SHORT_5_5_5_1,
+	Unsigned_Short_1_5_5_5_Rev     = UNSIGNED_SHORT_1_5_5_5_REV,
+	Unsigned_Int_8_8_8_8           = UNSIGNED_INT_8_8_8_8,
+	Unsigned_Int_8_8_8_8_Rev       = UNSIGNED_INT_8_8_8_8_REV,
+	Unsigned_Int_10_10_10_2        = UNSIGNED_INT_10_10_10_2,
+	Unsigned_Int_2_10_10_10_Rev    = UNSIGNED_INT_2_10_10_10_REV,
+	Unsigned_Int_24_8              = UNSIGNED_INT_24_8,
+	Unsigned_Int_10f_11f_11f_Rev   = UNSIGNED_INT_10F_11F_11F_REV,
+	Unsigned_Int_5_9_9_9_Rev       = UNSIGNED_INT_5_9_9_9_REV,
+	Float_32_Unsigned_Int_24_8_Rev = FLOAT_32_UNSIGNED_INT_24_8_REV,
 }
 
 /* void ClearNamedBufferSubData(uint buffer, enum internalformat, intptr offset, sizeiptr size, enum format, enum type, const void *data); */
@@ -189,14 +189,14 @@ Buffer_Type :: enum u32 {
 // target: Buffer_Binding_Target
 
 Access_Bits :: enum u32 {
-	MAP_READ_BIT              = MAP_READ_BIT,
-	MAP_WRITE_BIT             = MAP_WRITE_BIT,
-	MAP_PERSISTENT_BIT        = MAP_PERSISTENT_BIT,
-	MAP_COHERENT_BIT          = MAP_COHERENT_BIT,
-	MAP_INVALIDATE_BUFFER_BIT = MAP_INVALIDATE_BUFFER_BIT,
-	MAP_INVALIDATE_RANGE_BIT  = MAP_INVALIDATE_RANGE_BIT,
-	MAP_FLUSH_EXPLICIT_BIT    = MAP_FLUSH_EXPLICIT_BIT,
-	MAP_UNSYNCHRONIZED_BIT    = MAP_UNSYNCHRONIZED_BIT,
+	Map_Read_Bit              = MAP_READ_BIT,
+	Map_Write_Bit             = MAP_WRITE_BIT,
+	Map_Persistent_Bit        = MAP_PERSISTENT_BIT,
+	Map_Coherent_Bit          = MAP_COHERENT_BIT,
+	Map_Invalidate_Buffer_Bit = MAP_INVALIDATE_BUFFER_BIT,
+	Map_Invalidate_Range_Bit  = MAP_INVALIDATE_RANGE_BIT,
+	Map_Flush_Explicit_Bit    = MAP_FLUSH_EXPLICIT_BIT,
+	Map_Unsynchronized_Bit    = MAP_UNSYNCHRONIZED_BIT,
 }
 
 /* void *MapNamedBufferRange(uint buffer, intptr offset, sizeiptr length, bitfield access); */
@@ -206,9 +206,9 @@ Access_Bits :: enum u32 {
 // target: Buffer_Binding_Target
 
 Access :: enum u32 {
-	READ_ONLY  = READ_ONLY,
-	WRITE_ONLY = WRITE_ONLY,
-	READ_WRITE = READ_WRITE,
+	Read_Only  = READ_ONLY,
+	Write_Only = WRITE_ONLY,
+	Read_Write = READ_WRITE,
 }
 
 /* void *MapNamedBuffer(uint buffer, enum access); */
@@ -227,14 +227,14 @@ Access :: enum u32 {
 // target: Buffer_Binding_Target
 
 Buffer_Parameter :: enum u32 {
-	BUFFER_SIZE              = BUFFER_SIZE,
-	BUFFER_USAGE             = BUFFER_USAGE,
-	BUFFER_ACCESS            = BUFFER_ACCESS,
-	BUFFER_ACCESS_FLAGS      = BUFFER_ACCESS_FLAGS,
-	BUFFER_MAPPED            = BUFFER_MAPPED,
-	BUFFER_MAP_OFFSET        = BUFFER_MAP_OFFSET,
-	BUFFER_MAP_LENGTH        = BUFFER_MAP_LENGTH,
-	BUFFER_IMMUTABLE_STORAGE = BUFFER_IMMUTABLE_STORAGE,
+	Buffer_Size              = BUFFER_SIZE,
+	Buffer_Usage             = BUFFER_USAGE,
+	Buffer_Access            = BUFFER_ACCESS,
+	Buffer_Access_Flags      = BUFFER_ACCESS_FLAGS,
+	Buffer_Mapped            = BUFFER_MAPPED,
+	Buffer_Map_Offset        = BUFFER_MAP_OFFSET,
+	Buffer_Map_Length        = BUFFER_MAP_LENGTH,
+	Buffer_Immutable_Storage = BUFFER_IMMUTABLE_STORAGE,
 }
 
 /* void GetBufferParameteri64v(enum target, enum pname, int64*data); */
@@ -251,7 +251,7 @@ Buffer_Parameter :: enum u32 {
 // target: Buffer_Binding_Target
 
 Buffer_Pointer_Parameter :: enum u32 {
-	BUFFER_MAP_POINTER = BUFFER_MAP_POINTER,
+	Buffer_Map_Pointer = BUFFER_MAP_POINTER,
 }
 
 /* void GetNamedBufferPointerv(uint buffer, enum pname, const void **params); */
