@@ -143,7 +143,7 @@ create_and_link_program :: proc(shader_ids: []u32, binary_retrievable := false) 
 		AttachShader(program_id, id)
 	}
 	if binary_retrievable {
-		ProgramParameteri(program_id, .PROGRAM_BINARY_RETRIEVABLE_HINT, 1/*true*/)
+		ProgramParameteri(program_id, .Program_Binary_Retrievable_Hint, 1/*true*/)
 	}
 	LinkProgram(program_id)
 
@@ -267,7 +267,7 @@ destroy_uniforms :: proc(u: Uniforms) {
 
 get_uniforms_from_program :: proc(program: u32) -> (uniforms: Uniforms) {
 	uniform_count: i32
-	GetProgramiv(program, .ACTIVE_UNIFORMS, &uniform_count)
+	GetProgramiv(program, .Active_Uniforms, &uniform_count)
 
 	if uniform_count > 0 {
 		reserve(&uniforms, int(uniform_count))
