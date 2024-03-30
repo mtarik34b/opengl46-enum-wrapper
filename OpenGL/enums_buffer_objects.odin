@@ -138,33 +138,7 @@ Buffer_Format :: enum u32 {
 	Depth_Stencil   = DEPTH_STENCIL,
 }
 
-//TODO(tarik): Duplicate of Pixel_Data_Type (other file)
-Buffer_Type :: enum u32 {
-	Unsigned_Byte                  = UNSIGNED_BYTE,
-	Byte                           = BYTE,
-	Unsigned_Short                 = UNSIGNED_SHORT,
-	Short                          = SHORT,
-	Unsigned_Int                   = UNSIGNED_INT,
-	Int                            = INT,
-	Half_Float                     = HALF_FLOAT,
-	Float                          = FLOAT,
-	Unsigned_Byte_3_3_2            = UNSIGNED_BYTE_3_3_2,
-	Unsigned_Byte_2_3_3_Rev        = UNSIGNED_BYTE_2_3_3_REV,
-	Unsigned_Short_5_6_5           = UNSIGNED_SHORT_5_6_5,
-	Unsigned_Short_5_6_5_Rev       = UNSIGNED_SHORT_5_6_5_REV,
-	Unsigned_Short_4_4_4_4         = UNSIGNED_SHORT_4_4_4_4,
-	Unsigned_Short_4_4_4_4_Rev     = UNSIGNED_SHORT_4_4_4_4_REV,
-	Unsigned_Short_5_5_5_1         = UNSIGNED_SHORT_5_5_5_1,
-	Unsigned_Short_1_5_5_5_Rev     = UNSIGNED_SHORT_1_5_5_5_REV,
-	Unsigned_Int_8_8_8_8           = UNSIGNED_INT_8_8_8_8,
-	Unsigned_Int_8_8_8_8_Rev       = UNSIGNED_INT_8_8_8_8_REV,
-	Unsigned_Int_10_10_10_2        = UNSIGNED_INT_10_10_10_2,
-	Unsigned_Int_2_10_10_10_Rev    = UNSIGNED_INT_2_10_10_10_REV,
-	Unsigned_Int_24_8              = UNSIGNED_INT_24_8,
-	Unsigned_Int_10f_11f_11f_Rev   = UNSIGNED_INT_10F_11F_11F_REV,
-	Unsigned_Int_5_9_9_9_Rev       = UNSIGNED_INT_5_9_9_9_REV,
-	Float_32_Unsigned_Int_24_8_Rev = FLOAT_32_UNSIGNED_INT_24_8_REV,
-}
+Buffer_Type :: Pixel_Data_Type
 
 /* void ClearNamedBufferSubData(uint buffer, enum internalformat, intptr offset, sizeiptr size, enum format, enum type, const void *data); */
 // internalformat: Buffer_Internalformat

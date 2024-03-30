@@ -273,6 +273,7 @@ Pixel_Data_Format :: enum u32 {
 
 Tex_Image_3D_Type :: Pixel_Data_Type
 Pixel_Data_Type :: enum u32 {
+	/* Table 8.2 */
 	Unsigned_Byte                  = UNSIGNED_BYTE,
 	Byte                           = BYTE,
 	Unsigned_Short                 = UNSIGNED_SHORT,

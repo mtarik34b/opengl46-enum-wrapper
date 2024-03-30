@@ -171,7 +171,6 @@ Renderbuffer_Parameter :: enum u32 {
 // target:             Framebuffer_Target
 // renderbuffertarget: Renderbuffer_Target
 
-// TODO(tarik): Find better name
 Framebuffer_Renderbuffer_Attachment :: enum u32 {
 	Depth_Attachment         = DEPTH_ATTACHMENT,
 	Stencil_Attachment       = STENCIL_ATTACHMENT,

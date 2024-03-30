@@ -40,7 +40,6 @@ Blit_Mask_Bits :: enum u32 {
 	Stencil_Buffer_Bit = STENCIL_BUFFER_BIT,
 }
 
-// NOTE(tarik): This shall suffice until Odin has real bitfields.
 Blit_Mask :: enum u32 {
 	None                     = NONE,
 	Color_Buffer_Bit         = COLOR_BUFFER_BIT,
