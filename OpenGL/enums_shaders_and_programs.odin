@@ -3,7 +3,7 @@ package vendor_gl
 /* Shader Objects [7.1-2] */
 
 /* uint CreateShader(enum type); */
-// NOTE(tarik): Since helpers.odin defined an own Shader_Type, this is unused.
+// NOTE: Since helpers.odin defined an own Shader_Type, this is unused.
 _Shader_Type :: enum u32 {
 	Compute_Shader         = COMPUTE_SHADER,
 	Fragment_Shader        = FRAGMENT_SHADER,
@@ -170,7 +170,7 @@ Program_Stages_Bits :: enum u32 {
 
 /* void GetProgramBinary(uint program, sizei bufSize, sizei *length, enum *binaryFormat, void *binary); */
 Program_Binary_Format :: enum u32 {
-	// TODO(tarik): Not sure if this is correct
+	// TODO: Not sure if this is correct
 
 	// "OpenGL defines no specific binary formats. Queries of
 	// values NUM_PROGRAM_BINARY_FORMATS and PROGRAM_BINARY_FORMATS return
@@ -180,7 +180,7 @@ Program_Binary_Format :: enum u32 {
 }
 
 /* void ProgramBinary(uint program, enum binaryFormat, const void *binary, sizei length); */
-// TODO(tarik): Not sure if this is correct
+// TODO: Not sure if this is correct
 // binaryFormat: Program_Binary_Format
 
 
@@ -354,7 +354,7 @@ Active_Atomic_Counter_Buffer_Parameter :: enum u32 {
 /* Subroutine Uniform Variables [7.9] */
 
 /* int GetSubroutineUniformLocation(uint program, enum shadertype, const char *name); */
-// TODO(tarik): See comment on _Shader_Type. Probably should be using Shader_Type from helpers.odin here.
+// TODO: See comment on _Shader_Type. Probably should be using Shader_Type from helpers.odin here.
 Subroutine_Uniform_Shader_Type :: enum u32 {
 	Compute_Shader         = COMPUTE_SHADER,
 	Fragment_Shader        = FRAGMENT_SHADER,
@@ -365,26 +365,26 @@ Subroutine_Uniform_Shader_Type :: enum u32 {
 }
 
 /* uint GetSubroutineIndex(uint program, enum shadertype, const char *name); */
-// TODO(tarik): See comment on _Shader_Type. Probably should be using Shader_Type from helpers.odin here.
+// TODO: See comment on _Shader_Type. Probably should be using Shader_Type from helpers.odin here.
 // shadertype: Subroutine_Uniform_Shader_Type
 
 /* void GetActiveSubroutineName(uint program, enum shadertype, uint index, sizei bufsize, sizei *length, char *name); */
-// TODO(tarik): See comment on _Shader_Type. Probably should be using Shader_Type from helpers.odin here.
+// TODO: See comment on _Shader_Type. Probably should be using Shader_Type from helpers.odin here.
 // shadertype: Subroutine_Uniform_Shader_Type
 
 /* void GetActiveSubroutineUniformName(uint program, enum shadertype, uint index, sizei bufsize, sizei *length, char *name); */
-// TODO(tarik): See comment on _Shader_Type. Probably should be using Shader_Type from helpers.odin here.
+// TODO: See comment on _Shader_Type. Probably should be using Shader_Type from helpers.odin here.
 // shadertype: Subroutine_Uniform_Shader_Type
 
 /* void GetActiveSubroutineUniformiv(uint program, enum shadertype, uint index, enum pname, int *values); */
-// TODO(tarik): See comment on _Shader_Type. Probably should be using Shader_Type from helpers.odin here.
+// TODO: See comment on _Shader_Type. Probably should be using Shader_Type from helpers.odin here.
 // shadertype: Subroutine_Uniform_Shader_Type
 
 Active_Subroutine_Uniform_Parameter :: enum u32 {
 	Compatible_Subroutines     = COMPATIBLE_SUBROUTINES,
 	Num_Compatible_Subroutines = NUM_COMPATIBLE_SUBROUTINES,
 
-	// NOTE(tarik): These shouldn't exist according to Quick Reference Card
+	// NOTE: These shouldn't exist according to Quick Reference Card
 	//              or the specification on page 156, but should exist
 	//              according to page 620 of specification.
 	Uniform_Size               = UNIFORM_SIZE,
@@ -443,7 +443,7 @@ Get_Shader_Parameter :: enum u32 {
 	Shader_Source_Length = SHADER_SOURCE_LENGTH,
 	SPIR_V_Binary        = SPIR_V_BINARY,
 
-	// TODO(tarik): Exists on Quick Reference Card, but not Specification.
+	// TODO: Exists on Quick Reference Card, but not Specification.
 	//              See pages 167, 612.
 	// Compute_Shader       = COMPUTE_SHADER,
 }
@@ -478,7 +478,7 @@ Get_Program_Parameter :: enum u32 {
 	Program_Binary_Retrievable_Hint       = PROGRAM_BINARY_RETRIEVABLE_HINT,
 	Active_Atomic_Counter_Buffers         = ACTIVE_ATOMIC_COUNTER_BUFFERS,
 
-	// NOTE(tarik): This was not listed under the command description.
+	// NOTE: This was not listed under the command description.
 	// However at other places, this usage was shown (p. 131 of specification).
 	Program_Binary_Length                 = PROGRAM_BINARY_LENGTH,
 }

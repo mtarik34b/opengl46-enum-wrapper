@@ -3,7 +3,7 @@ package vendor_gl
 /* Multisample Fragment Ops. [17.3.3] */
 
 /* void SampleMaski(uint maskNumber, bitfield mask); */
-// NOTE(tarik): bitfield mask is unimplemented
+// NOTE: bitfield mask is unimplemented
 
 /* void StencilFunc(enum func, int ref, uint mask); */
 Comparison_Func :: enum u32 {

@@ -2,7 +2,7 @@ package vendor_gl
 
 /* void GetActiveAttrib(uint program, uint index, sizei bufSize, sizei *length, int *size, enum *type, char *name); */
 Attribute_Type :: enum u32 {
-	None              = NONE, // NOTE(tarik): Only according to Ref. Card.
+	None              = NONE, // NOTE: Only according to Ref. Card.
 	Float             = FLOAT,
 	Float_Vec2        = FLOAT_VEC2,
 	Float_Vec3        = FLOAT_VEC3,

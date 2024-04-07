@@ -51,7 +51,7 @@ Texture_Target :: enum u32 {
 	Texture_Cube_Map_Array       = TEXTURE_CUBE_MAP_ARRAY,
 	Texture_2D_Multisample       = TEXTURE_2D_MULTISAMPLE,
 	Texture_2D_Multisample_Array = TEXTURE_2D_MULTISAMPLE_ARRAY,
-	// NOTE(tarik): TEXTURE_BUFFER is no argument for Tex*Parameter* below.
+	// NOTE: TEXTURE_BUFFER is no argument for Tex*Parameter* below.
 	Texture_Buffer               = TEXTURE_BUFFER,
 }
 
@@ -145,7 +145,7 @@ Pixel_Store_Parameter :: enum u32 {
 
 /* Texture Image Spec. [8.5] */
 
-// NOTE(tarik): internalformat was turned from int to u32, whereas it's casted to i32 when passed to impl_*
+// NOTE: internalformat was turned from int to u32, whereas it's casted to i32 when passed to impl_*
 /* void TexImage3D(enum target, int level, int internalformat, sizei width, sizei height, sizei depth, int border, enum format, enum type, const void *data); */
 Tex_Image_3D_Target :: enum u32 {
 	Texture_3D                   = TEXTURE_3D,
@@ -160,7 +160,7 @@ Texture_Internalformat :: enum u32 {
 	// Base Internal Format
 	Depth_Component = DEPTH_COMPONENT,
 	Depth_Stencil   = DEPTH_STENCIL,
-	Stencil_Index   = STENCIL_INDEX, // TODO(tarik): This needs to be verified. It's correct according to Ref. Card.
+	Stencil_Index   = STENCIL_INDEX, // TODO: This needs to be verified. It's correct according to Ref. Card.
 	Red             = RED,
 	RG              = RG,
 	RGB             = RGB,
@@ -300,7 +300,7 @@ Pixel_Data_Type :: enum u32 {
 	Float_32_Unsigned_Int_24_8_Rev = FLOAT_32_UNSIGNED_INT_24_8_REV,
 }
 
-// NOTE(tarik): internalformat was turned from int to u32, whereas it's casted to i32 when passed to impl_*
+// NOTE: internalformat was turned from int to u32, whereas it's casted to i32 when passed to impl_*
 /* void TexImage2D(enum target, int level, int internalformat, sizei width, sizei height, int border, enum format, enum type, const void *data); */
 // internalformat: Texture_Internalformat
 // format:         Pixel_Data_Format
@@ -322,7 +322,7 @@ Tex_Image_2D_Target :: enum u32 {
 	Proxy_Texture_Cube_Map      = PROXY_TEXTURE_CUBE_MAP,
 }
 
-// NOTE(tarik): internalformat was turned from int to u32, whereas it's casted to i32 when passed to impl_*
+// NOTE: internalformat was turned from int to u32, whereas it's casted to i32 when passed to impl_*
 /* void TexImage1D(enum target, int level, int internalformat, sizei width, int border, enum format, enum type, const void *data); */
 // internalformat: Texture_Internalformat
 // format:         Pixel_Data_Format
@@ -491,7 +491,7 @@ Tex_3D_Multisample_Target :: enum u32 {
 }
 
 Color_Depth_Stencil_Renderable_Format :: enum u32 {
-	// TODO(tarik): Marked fields are part of the enum as per my limited
+	// TODO: Marked fields are part of the enum as per my limited
 	//              understanding of the Spec. (see page 234, 327,...),
 	//              however they're not included in the Ref. Card. This
 	//              makes the name of this enum questionable.
@@ -654,7 +654,7 @@ Tex_Buffer_Internalformat :: enum u32 {
 
 /* void TexParameteri(enum target, enum pname, T param); */
 Texture_Parameter_Target :: enum u32 {
-// NOTE(tarik): This differs from Texture_Target by not having TEXTURE_BUFFER.
+// NOTE: This differs from Texture_Target by not having TEXTURE_BUFFER.
 	Texture_1D                   = TEXTURE_1D,
 	Texture_2D                   = TEXTURE_2D,
 	Texture_3D                   = TEXTURE_3D,
@@ -686,7 +686,7 @@ Texture_Parameter :: enum u32 {
 	Texture_Swizzle_RGBA       = TEXTURE_SWIZZLE_RGBA,
 	Texture_Compare_Mode       = TEXTURE_COMPARE_MODE,
 	Texture_Compare_Func       = TEXTURE_COMPARE_FUNC,
-	// TODO(tarik): This one is only in the Spec:
+	// TODO: This one is only in the Spec:
 	Texture_Max_Anisotropy     = TEXTURE_MAX_ANISOTROPY,
 }
 
@@ -763,7 +763,7 @@ Get_Texture_Parameter :: enum u32 {
 	Texture_Swizzle_RGBA            = TEXTURE_SWIZZLE_RGBA,
 	Texture_Compare_Mode            = TEXTURE_COMPARE_MODE,
 	Texture_Compare_Func            = TEXTURE_COMPARE_FUNC,
-	// TODO(tarik): This one is only in the Spec:
+	// TODO: This one is only in the Spec:
 	Texture_Max_Anisotropy          = TEXTURE_MAX_ANISOTROPY,
 }
 
@@ -888,13 +888,13 @@ Get_Tex_Image_Target :: enum u32 {
 /* void GetCompressedTexImage(enum target, int level, void *pixels); */
 // target: Get_Tex_Image_Target
 
-// TODO(tarik): Remove this if no enum for int level will be created
+// TODO: Remove this if no enum for int level will be created
 /* void GetCompressedTextureImage(uint texture, int level, sizei bufSize, void *pixels); */
 
 /* void GetnCompressedTexImage(enum target, int level, sizei bufsize, void *pixels); */
 // target: Get_Tex_Image_Target
 
-// TODO(tarik): Remove this if no enum for int level will be created
+// TODO: Remove this if no enum for int level will be created
 /* void GetCompressedTextureSubImage(uint texture, int level, int xoffset, int yoffset, int zoffset, sizei width, sizei height, sizei depth, sizei bufSize, void *pixels); */
 
 
@@ -1072,7 +1072,7 @@ Tex_Storage_Internalformat :: enum u32 {
 	RGBA32i            = RGBA32I,
 	RGBA32ui           = RGBA32UI,
 
-	// TODO(tarik): Marked fields are a not required format and not included
+	// TODO: Marked fields are a not required format and not included
 	// in the Ref. Card. Read 8.5.1 for more info.
 
 	// Depth-Renderable
