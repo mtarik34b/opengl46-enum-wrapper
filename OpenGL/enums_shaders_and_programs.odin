@@ -14,7 +14,7 @@ _Shader_Type :: enum u32 {
 }
 
 /* void ShaderBinary(sizei count, const uint *shaders, enum binaryformat, const void *binary, sizei length); */
-Shader_Binary_Format :: enum u32 {
+Binary_Format :: enum u32 {
 	Shader_Binary_Format_SPIR_V = SHADER_BINARY_FORMAT_SPIR_V,
 }
 
@@ -169,19 +169,10 @@ Program_Stages_Bits :: enum u32 {
 /* Program Binaries [7.5] */
 
 /* void GetProgramBinary(uint program, sizei bufSize, sizei *length, enum *binaryFormat, void *binary); */
-Program_Binary_Format :: enum u32 {
-	// TODO: Not sure if this is correct
-
-	// "OpenGL defines no specific binary formats. Queries of
-	// values NUM_PROGRAM_BINARY_FORMATS and PROGRAM_BINARY_FORMATS return
-	// the number of program binary formats and the list of program binary
-	// format values supported by an implementation. The binaryFormat
-	// returned by GetProgramBinary must be present in this list."
-}
+// binaryFormat: Binary_Format
 
 /* void ProgramBinary(uint program, enum binaryFormat, const void *binary, sizei length); */
-// TODO: Not sure if this is correct
-// binaryFormat: Program_Binary_Format
+// binaryFormat: Binary_Format
 
 
 /* Uniform Variables [7.6] */
