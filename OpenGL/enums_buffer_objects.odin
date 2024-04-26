@@ -44,17 +44,19 @@ Buffer_Binding_Indexed_Target :: enum u32 {
 /* void BufferStorage(enum target, sizeiptr size, const void *data, bitfield flags); */
 // target: Buffer_Binding_Target
 
-Buffer_Storage_Bits :: enum u32 {
-	Map_Read_Bit        = MAP_READ_BIT,
-	Map_Write_Bit       = MAP_WRITE_BIT,
-	Dynamic_Storage_Bit = DYNAMIC_STORAGE_BIT,
-	Client_Storage_Bit  = CLIENT_STORAGE_BIT,
-	Map_Coherent_Bit    = MAP_COHERENT_BIT,
-	Map_Persistent_Bit  = MAP_PERSISTENT_BIT,
+Buffer_Storage_Flag :: enum u32 {
+	Map_Read        = 0, // MAP_READ_BIT        :: 0x0001
+	Map_Write       = 1, // MAP_WRITE_BIT       :: 0x0002
+	Map_Persistent  = 6, // MAP_PERSISTENT_BIT  :: 0x0040
+	Map_Coherent    = 7, // MAP_COHERENT_BIT    :: 0x0080
+	Dynamic_Storage = 8, // DYNAMIC_STORAGE_BIT :: 0x0100
+	Client_Storage  = 9, // CLIENT_STORAGE_BIT  :: 0x0200
 }
 
+Buffer_Storage_Flags :: bit_set[Buffer_Storage_Flag; u32]
+
 /* void NamedBufferStorage(uint buffer, sizeiptr size, const void *data, bitfield flags); */
-// flags: Buffer_Storage_Bits
+// flags: Buffer_Storage_Flags
 
 /* void BufferData(enum target, sizeiptr size, const void *data, enum usage); */
 // target: Buffer_Binding_Target
@@ -162,19 +164,21 @@ Buffer_Type :: Pixel_Data_Type
 /* void *MapBufferRange(enum target, intptr offset, sizeiptr length, bitfield access); */
 // target: Buffer_Binding_Target
 
-Access_Bits :: enum u32 {
-	Map_Read_Bit              = MAP_READ_BIT,
-	Map_Write_Bit             = MAP_WRITE_BIT,
-	Map_Persistent_Bit        = MAP_PERSISTENT_BIT,
-	Map_Coherent_Bit          = MAP_COHERENT_BIT,
-	Map_Invalidate_Buffer_Bit = MAP_INVALIDATE_BUFFER_BIT,
-	Map_Invalidate_Range_Bit  = MAP_INVALIDATE_RANGE_BIT,
-	Map_Flush_Explicit_Bit    = MAP_FLUSH_EXPLICIT_BIT,
-	Map_Unsynchronized_Bit    = MAP_UNSYNCHRONIZED_BIT,
+Access_Flag :: enum u32 {
+	Map_Read              = 0, // MAP_READ_BIT              :: 0x0001
+	Map_Write             = 1, // MAP_WRITE_BIT             :: 0x0002
+	Map_Persistent        = 2, // MAP_INVALIDATE_RANGE_BIT  :: 0x0004
+	Map_Coherent          = 3, // MAP_INVALIDATE_BUFFER_BIT :: 0x0008
+	Map_Invalidate_Buffer = 4, // MAP_FLUSH_EXPLICIT_BIT    :: 0x0010
+	Map_Invalidate_Range  = 5, // MAP_UNSYNCHRONIZED_BIT    :: 0x0020
+	Map_Flush_Explicit    = 6, // MAP_PERSISTENT_BIT        :: 0x0040
+	Map_Unsynchronized    = 7, // MAP_COHERENT_BIT          :: 0x0080
 }
 
+Access_Flags :: bit_set[Access_Flag; u32]
+
 /* void *MapNamedBufferRange(uint buffer, intptr offset, sizeiptr length, bitfield access); */
-// access: Access_Bits
+// access: Access_Flags
 
 /* void *MapBuffer(enum target, enum access); */
 // target: Buffer_Binding_Target

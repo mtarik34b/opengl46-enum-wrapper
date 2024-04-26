@@ -154,16 +154,18 @@ Program_Resource_Location_Index :: enum u32 {
 /* Program Pipeline Objects [7.4] */
 
 /* void UseProgramStages(uint pipeline, bitfield stages, uint program); */
-Program_Stages_Bits :: enum u32 {
-	Compute_Shader_Bit         = COMPUTE_SHADER_BIT,
-	Vertex_Shader_Bit          = VERTEX_SHADER_BIT,
-	Tess_Control_Shader_Bit    = TESS_CONTROL_SHADER_BIT,
-	Tess_Evaluation_Shader_Bit = TESS_EVALUATION_SHADER_BIT,
-	Geometry_Shader_Bit        = GEOMETRY_SHADER_BIT,
-	Fragment_Shader_Bit        = FRAGMENT_SHADER_BIT,
+Program_Stage_Flag :: enum u32 {
+	Vertex_Shader          = 0, // VERTEX_SHADER_BIT          :: 0x00000001
+	Fragment_Shader        = 1, // FRAGMENT_SHADER_BIT        :: 0x00000002
+	Geometry_Shader        = 2, // GEOMETRY_SHADER_BIT        :: 0x00000004
+	Tess_Control_Shader    = 3, // TESS_CONTROL_SHADER_BIT    :: 0x00000008
+	Tess_Evaluation_Shader = 4, // TESS_EVALUATION_SHADER_BIT :: 0x00000010
+	Compute_Shader         = 5, // COMPUTE_SHADER_BIT         :: 0x00000020
 
-	All_Shader_Bits            = ALL_SHADER_BITS,
+	// NOTE: Removed ALL_SHADER_BITS :: 0xFFFFFFFF
 }
+
+Program_Stages :: bit_set[Program_Stage_Flag; u32]
 
 
 /* Program Binaries [7.5] */
@@ -390,37 +392,41 @@ Active_Subroutine_Uniform_Parameter :: enum u32 {
 /* Shader Memory Access [7.12.2] */
 
 /* void MemoryBarrier(bitfield barriers); */
-Memory_Barrier_Bits :: enum u32 {
-	Vertex_Attrib_Array_Barrier_Bit  = VERTEX_ATTRIB_ARRAY_BARRIER_BIT,
-	Element_Array_Barrier_Bit        = ELEMENT_ARRAY_BARRIER_BIT,
-	Uniform_Barrier_Bit              = UNIFORM_BARRIER_BIT,
-	Texture_Fetch_Barrier_Bit        = TEXTURE_FETCH_BARRIER_BIT,
-	Shader_Image_Access_Barrier_Bit  = SHADER_IMAGE_ACCESS_BARRIER_BIT,
-	Command_Barrier_Bit              = COMMAND_BARRIER_BIT,
-	Pixel_Buffer_Barrier_Bit         = PIXEL_BUFFER_BARRIER_BIT,
-	Texture_Update_Barrier_Bit       = TEXTURE_UPDATE_BARRIER_BIT,
-	Buffer_Update_Barrier_Bit        = BUFFER_UPDATE_BARRIER_BIT,
-	Client_Mapped_Buffer_Barrier_Bit = CLIENT_MAPPED_BUFFER_BARRIER_BIT,
-	Query_Buffer_Barrier_Bit         = QUERY_BUFFER_BARRIER_BIT,
-	Framebuffer_Barrier_Bit          = FRAMEBUFFER_BARRIER_BIT,
-	Transform_Feedback_Barrier_Bit   = TRANSFORM_FEEDBACK_BARRIER_BIT,
-	Atomic_Counter_Barrier_Bit       = ATOMIC_COUNTER_BARRIER_BIT,
-	Shader_Storage_Barrier_Bit       = SHADER_STORAGE_BARRIER_BIT,
+Memory_Barrier_Flag :: enum u32 {
+	Vertex_Attrib_Array_Barrier  = 0,  // VERTEX_ATTRIB_ARRAY_BARRIER_BIT  :: 0x00000001
+	Element_Array_Barrier        = 1,  // ELEMENT_ARRAY_BARRIER_BIT        :: 0x00000002
+	Uniform_Barrier              = 2,  // UNIFORM_BARRIER_BIT              :: 0x00000004
+	Texture_Fetch_Barrier        = 3,  // TEXTURE_FETCH_BARRIER_BIT        :: 0x00000008
+	Shader_Image_Access_Barrier  = 5,  // SHADER_IMAGE_ACCESS_BARRIER_BIT  :: 0x00000020
+	Command_Barrier              = 6,  // COMMAND_BARRIER_BIT              :: 0x00000040
+	Pixel_Buffer_Barrier         = 7,  // PIXEL_BUFFER_BARRIER_BIT         :: 0x00000080
+	Texture_Update_Barrier       = 8,  // TEXTURE_UPDATE_BARRIER_BIT       :: 0x00000100
+	Buffer_Update_Barrier        = 9,  // BUFFER_UPDATE_BARRIER_BIT        :: 0x00000200
+	Framebuffer_Barrier          = 10, // FRAMEBUFFER_BARRIER_BIT          :: 0x00000400
+	Transform_Feedback_Barrier   = 11, // TRANSFORM_FEEDBACK_BARRIER_BIT   :: 0x00000800
+	Atomic_Counter_Barrier       = 12, // ATOMIC_COUNTER_BARRIER_BIT       :: 0x00001000
+	Shader_Storage_Barrier       = 13, // SHADER_STORAGE_BARRIER_BIT       :: 0x00002000
+	Client_Mapped_Buffer_Barrier = 14, // CLIENT_MAPPED_BUFFER_BARRIER_BIT :: 0x00004000
+	Query_Buffer_Barrier         = 15, // QUERY_BUFFER_BARRIER_BIT         :: 0x00008000
 
-	All_Barrier_Bits                 = ALL_BARRIER_BITS,
+	// NOTE: Removed ALL_BARRIER_BITS :: 0xFFFFFFFF
 }
+
+Memory_Barrier_Flags :: bit_set[Memory_Barrier_Flag; u32]
 
 /* void MemoryBarrierByRegion(bitfield barriers); */
-Memory_Barrier_By_Region_Bits :: enum u32 {
-	Atomic_Counter_Barrier_Bit      = ATOMIC_COUNTER_BARRIER_BIT,
-	Framebuffer_Barrier_Bit         = FRAMEBUFFER_BARRIER_BIT,
-	Shader_Image_Access_Barrier_Bit = SHADER_IMAGE_ACCESS_BARRIER_BIT,
-	Shader_Storage_Barrier_Bit      = SHADER_STORAGE_BARRIER_BIT,
-	Texture_Fetch_Barrier_Bit       = TEXTURE_FETCH_BARRIER_BIT,
-	Uniform_Barrier_Bit             = UNIFORM_BARRIER_BIT,
+Memory_Barrier_By_Region_Flag :: enum u32 {
+	Uniform_Barrier              = 2,  // UNIFORM_BARRIER_BIT             :: 0x00000004
+	Texture_Fetch_Barrier        = 3,  // TEXTURE_FETCH_BARRIER_BIT       :: 0x00000008
+	Shader_Image_Access_Barrier  = 5,  // SHADER_IMAGE_ACCESS_BARRIER_BIT :: 0x00000020
+	Framebuffer_Barrier          = 10, // FRAMEBUFFER_BARRIER_BIT         :: 0x00000400
+	Atomic_Counter_Barrier       = 12, // ATOMIC_COUNTER_BARRIER_BIT      :: 0x00001000
+	Shader_Storage_Barrier       = 13, // SHADER_STORAGE_BARRIER_BIT      :: 0x00002000
 
-	All_Barrier_Bits                = ALL_BARRIER_BITS,
+	// NOTE: Removed ALL_BARRIER_BITS :: 0xFFFFFFFF
 }
+
+Memory_Barrier_By_Region_Flags :: bit_set[Memory_Barrier_By_Region_Flag; u32]
 
 
 /* Shader and Program Queries [7.13] */

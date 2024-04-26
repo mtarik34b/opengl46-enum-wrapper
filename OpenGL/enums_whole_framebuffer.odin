@@ -107,21 +107,13 @@ Draw_Buffers :: enum u32 {
 /* Clearing the Buffers [17.4.3] */
 
 /* void Clear(bitfield buf); */
-Clear_Bits :: enum u32 {
-	Color_Buffer_Bit   = COLOR_BUFFER_BIT,
-	Depth_Buffer_Bit   = DEPTH_BUFFER_BIT,
-	Stencil_Buffer_Bit = STENCIL_BUFFER_BIT,
+Buffer_Flag :: enum u32 {
+	Depth_Buffer   = 8,  // DEPTH_BUFFER_BIT   :: 0x00000100,
+	Stencil_Buffer = 10, // STENCIL_BUFFER_BIT :: 0x00000400,
+	Color_Buffer   = 14, // COLOR_BUFFER_BIT   :: 0x00004000,
 }
 
-Clear_Mask :: enum u32 {
-	Color_Buffer_Bit         = COLOR_BUFFER_BIT,
-	Depth_Buffer_Bit         = DEPTH_BUFFER_BIT,
-	Stencil_Buffer_Bit       = STENCIL_BUFFER_BIT,
-	Color_Depth_Bits         = COLOR_BUFFER_BIT | DEPTH_BUFFER_BIT,
-	Color_Stencil_Bits       = COLOR_BUFFER_BIT | STENCIL_BUFFER_BIT,
-	Depth_Stencil_Bits       = DEPTH_BUFFER_BIT | STENCIL_BUFFER_BIT,
-	Color_Depth_Stencil_Bits = COLOR_BUFFER_BIT | DEPTH_BUFFER_BIT | STENCIL_BUFFER_BIT,
-}
+Clear_Mask :: bit_set[Buffer_Flag; u32]
 
 /* void ClearBufferiv(enum buffer, int drawbuffer, const T *value); */
 Clear_Bufferiv :: enum u32 {
