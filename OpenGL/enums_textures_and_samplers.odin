@@ -434,7 +434,7 @@ Compressed_Internalformat :: enum u32 {
 	Compressed_R11_EAC                        = COMPRESSED_R11_EAC,
 	Compressed_Signed_R11_EAC                 = COMPRESSED_SIGNED_R11_EAC,
 	Compressed_RG11_EAC                       = COMPRESSED_RG11_EAC,
-	Compressed_Signed_RG11_EAC                = COMPRESSED_SIGNED_RG11_EAC
+	Compressed_Signed_RG11_EAC                = COMPRESSED_SIGNED_RG11_EAC,
 }
 
 
@@ -839,7 +839,7 @@ Tex_Level_Parameter :: enum u32 {
 	Texture_Compressed_Image_Size     = TEXTURE_COMPRESSED_IMAGE_SIZE,
 	Texture_Buffer_Data_Store_Binding = TEXTURE_BUFFER_DATA_STORE_BINDING,
 	Texture_Buffer_Offset             = TEXTURE_BUFFER_OFFSET,
-	Texture_Buffer_Size               = TEXTURE_BUFFER_SIZE
+	Texture_Buffer_Size               = TEXTURE_BUFFER_SIZE,
 }
 
 /* void GetTexLevelParameterfv(enum target, int level, enum pname, T *params); */
@@ -908,7 +908,7 @@ Generate_Mipmap_Target :: enum u32 {
 	Texture_1D_Array       = TEXTURE_1D_ARRAY,
 	Texture_2D_Array       = TEXTURE_2D_ARRAY,
 	Texture_Cube_Map       = TEXTURE_CUBE_MAP,
-	Texture_Cube_Map_Array = TEXTURE_CUBE_MAP_ARRAY
+	Texture_Cube_Map_Array = TEXTURE_CUBE_MAP_ARRAY,
 }
 
 
