@@ -18,6 +18,9 @@ Due to numerous errors in the Reference Guide, the majority of the implementatio
 - There are not many typedefs.
 - The formatting of wrappers.odin will be neglected until the code is stable.
 
+## Licensing
+Available under the MIT license. See [OpenGL/LICENSE](OpenGL/LICENSE).
+
 ## Contribute
 Certainly this wrapper needs a lot of polishing. \
 Feel free to contribute!
