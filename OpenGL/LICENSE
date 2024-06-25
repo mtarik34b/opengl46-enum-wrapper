@@ -1,6 +1,13 @@
 MIT License
 
+Copyright (c) 2013 David Herberth
+Copyright (c) 2018 vassvik
 Copyright (c) 2024 mtarik34b
+
+Contributions:
+- GL loader-generator by David Herberth.
+- Initial implementation of Odin OpenGL wrapper by vassvik.
+- Enum support added by mtarik34b.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
