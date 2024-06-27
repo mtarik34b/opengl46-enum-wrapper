@@ -1,4 +1,4 @@
-# OpenGL 4.6 Enum Wrapper for Odin Programming Language
+# Enum-Enhanced OpenGL 4.6 Wrapper for Odin Programming Language
 
 Categorizes the GL enums into groups and integrates them into the procedures, ensuring that only the correct enums are utilized. \
 Builds on the **vendor:OpenGL** library by vassvik.
