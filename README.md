@@ -16,7 +16,6 @@ Due to numerous errors in the Reference Guide, the majority of the implementatio
 - All procedure signatures are present, wherever an enum was added.
 - There are only a handful of references to other files.
 - There are not many typedefs.
-- The formatting of wrappers.odin will be neglected until the code is stable.
 
 ## Licensing
 Available under the MIT license. See [OpenGL/LICENSE](OpenGL/LICENSE).
